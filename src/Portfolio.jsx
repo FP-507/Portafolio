@@ -31,6 +31,11 @@ const LazyCertifications = withLazyLoading(
   <SectionSkeleton height="h-96" />
 )
 
+const LazyPWAFeatures = withLazyLoading(
+  () => import("./components/PWAFeatures"),
+  <SectionSkeleton height="h-96" />
+)
+
 const LazyContact = withLazyLoading(
   () => import("./components/Contact"),
   <SectionSkeleton height="h-80" />
@@ -54,6 +59,7 @@ export default function Portfolio() {
             <LazyTestimonials />
             <LazyExperienceTimeline />
             <LazyCertifications />
+            <LazyPWAFeatures />
             <LazyContact />
           </main>
           <LazyFooter />

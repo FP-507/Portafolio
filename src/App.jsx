@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Portfolio from "./Portfolio"
 import { withLazyLoading } from "./components/LazyLoader"
 import ErrorBoundary from "./components/ErrorBoundary"
+import PWAPrompt from "./components/PWAPrompt"
+import OfflineIndicator from "./components/OfflineIndicator"
 
 // Lazy loaded pages
 const LazyBlog = withLazyLoading(() => import("./pages/Blog"))
@@ -12,6 +14,7 @@ const LazyNotFound = withLazyLoading(() => import("./pages/NotFound"))
 export default function App() {
   return (
     <ErrorBoundary>
+      <OfflineIndicator />
       <Router basename="/Portafolio">
         <Routes>
           <Route path="/" element={<Portfolio />} />
@@ -20,6 +23,7 @@ export default function App() {
           <Route path="/404" element={<LazyNotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
+        <PWAPrompt />
       </Router>
     </ErrorBoundary>
   )
