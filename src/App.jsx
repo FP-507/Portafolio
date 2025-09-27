@@ -12,7 +12,7 @@ const LazyNotFound = withLazyLoading(() => import("./pages/NotFound"))
 export default function App() {
   return (
     <ErrorBoundary>
-      <Router>
+      <Router basename="/Portafolio">
         <Routes>
           <Route path="/" element={<Portfolio />} />
           <Route path="/blog" element={<LazyBlog />} />
