@@ -1,37 +1,30 @@
+
 import Navigation from "./components/Navigation"
 import Hero from "./components/Hero"
-import ErrorBoundary from "./components/ErrorBoundary"
-import { AppProvider } from "./context/AppContext"
-import { withLazyLoading, SectionSkeleton } from "./components/LazyLoader"
-
-const LazyAbout = withLazyLoading(() => import("./components/About"), <SectionSkeleton height="h-96" />)
-const LazyProjects = withLazyLoading(() => import("./components/Projects"), <SectionSkeleton height="h-[600px]" />)
-const LazyTestimonials = withLazyLoading(() => import("./components/Testimonials"), <SectionSkeleton height="h-96" />)
-const LazyExperienceTimeline = withLazyLoading(() => import("./components/ExperienceTimeline"), <SectionSkeleton height="h-[800px]" />)
-const LazyCertifications = withLazyLoading(() => import("./components/Certifications"), <SectionSkeleton height="h-96" />)
-const LazyPWAFeatures = withLazyLoading(() => import("./components/PWAFeatures"), <SectionSkeleton height="h-96" />)
-const LazyContact = withLazyLoading(() => import("./components/Contact"), <SectionSkeleton height="h-80" />)
-const LazyFooter = withLazyLoading(() => import("./components/Footer"), <SectionSkeleton height="h-64" />)
+import About from "./components/About"
+import Projects from "./components/Projects"
+import Testimonials from "./components/Testimonials"
+import ExperienceTimeline from "./components/ExperienceTimeline"
+import Certifications from "./components/Certifications"
+import PWAFeatures from "./components/PWAFeatures"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 export default function Portfolio() {
   return (
-    <ErrorBoundary>
-      <AppProvider>
-        <div className="font-sans">
-          <Navigation />
-          <main>
-            <Hero />
-            <LazyAbout />
-            <LazyProjects />
-            <LazyTestimonials />
-            <LazyExperienceTimeline />
-            <LazyCertifications />
-            <LazyPWAFeatures />
-            <LazyContact />
-          </main>
-          <LazyFooter />
-        </div>
-      </AppProvider>
-    </ErrorBoundary>
+    <div className="font-sans">
+      <Navigation />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Testimonials />
+        <ExperienceTimeline />
+        <Certifications />
+        <PWAFeatures />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
