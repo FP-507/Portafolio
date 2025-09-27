@@ -1,17 +1,20 @@
-# Portfolio - Fidel Pizart
+# 📱 Portfolio - Fidel Pizart
 
-Un portfolio personal moderno construido con React, Vite y Tailwind CSS.
+Portfolio profesional de desarrollador backend con funcionalidades PWA (Progressive Web App).
 
-## 🚀 Características
+## 🚀 Características Principales
 
-- ✅ **Modo oscuro/claro** con detección automática del sistema
-- ✅ **Multiidioma** (Inglés/Español)
-- ✅ **Persistencia de preferencias** en localStorage
-- ✅ **Diseño responsivo** optimizado para móviles
-- ✅ **Animaciones suaves** con Framer Motion
-- ✅ **Accesibilidad mejorada** (ARIA labels, navegación por teclado)
-- ✅ **Manejo de errores** con Error Boundaries
-- ✅ **Optimización de rendimiento** con React.memo y useCallback
+- ✅ **React 18** con Hooks modernos
+- ✅ **Vite** para build ultra-rápido 
+- ✅ **PWA completa** - Instalable como app nativa
+- ✅ **Tailwind CSS** para diseño responsive
+- ✅ **Framer Motion** para animaciones fluidas
+- ✅ **React Router** para SPA routing
+- ✅ **EmailJS** para formulario de contacto funcional
+- ✅ **Service Worker** para funcionalidad offline
+- ✅ **Dark/Light Mode** automático
+- ✅ **Blog System** completo con MDX
+- ✅ **SEO optimizado** para buscadores
 
 ## 🛠️ Tecnologías
 
@@ -72,20 +75,59 @@ src/
 - Detección automática del tema del sistema
 - Estructura semántica HTML mejorada
 
-## 🚀 Comandos disponibles
+## ⚙️ Instalación y Comandos
 
+### 1. Instalar dependencias
 ```bash
-# Desarrollo
+npm install
+```
+
+### 2. Ejecutar en desarrollo
+```bash
 npm run dev
+```
 
-# Build para producción
+### 3. Generar build de producción
+```bash
 npm run build
+```
 
-# Preview del build
-npm run preview
+### 4. Preview del build local
+```bash
+npm run serve
+```
 
-# Deploy a GitHub Pages
-npm run deploy
+## 🌐 Deploy Manual a GitHub Pages
+
+### Método Simple (Recomendado)
+
+1. **Genera el build:**
+   ```bash
+   npm run build
+   ```
+
+2. **Sube a GitHub:**
+   - Crea un repositorio llamado "Portafolio" en GitHub
+   - Sube TODOS los archivos del proyecto (incluido src/, public/, package.json, etc.)
+   - Ve a **Settings → Pages**
+   - Selecciona **"GitHub Actions"** como fuente
+   - GitHub detectará automáticamente que es un proyecto Vite/React
+
+3. **Tu sitio estará disponible en:**
+   ```
+   https://tu-usuario.github.io/Portafolio/
+   ```
+
+### Configuración Personalizada
+
+Si necesitas cambiar el nombre del repositorio, edita `vite.config.js`:
+
+```javascript
+// Para repositorio diferente
+base: '/mi-nuevo-nombre/'
+
+// Para repositorio principal (username.github.io)
+base: '/'
 ```
 
 ## 📱 Responsive Design

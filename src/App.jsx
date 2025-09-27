@@ -1,4 +1,3 @@
-import React from "react"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Portfolio from "./Portfolio"
 import { withLazyLoading } from "./components/LazyLoader"
@@ -6,7 +5,6 @@ import ErrorBoundary from "./components/ErrorBoundary"
 import PWAPrompt from "./components/PWAPrompt"
 import OfflineIndicator from "./components/OfflineIndicator"
 
-// Lazy loaded pages
 const LazyBlog = withLazyLoading(() => import("./pages/Blog"))
 const LazyBlogPost = withLazyLoading(() => import("./pages/BlogPost"))
 const LazyNotFound = withLazyLoading(() => import("./pages/NotFound"))

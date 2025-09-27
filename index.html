@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    
-    <!-- Viewport and PWA Meta Tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="FP Portfolio" />
-    
-    <!-- Theme Colors -->
-    <meta name="theme-color" content="#3b82f6" />
-    <meta name="msapplication-TileColor" content="#3b82f6" />
-    <meta name="msapplication-navbutton-color" content="#3b82f6" />
-    
-    <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="/Portafolio/favicon.ico" />
-    <link rel="apple-touch-icon" href="/Portafolio/pwa-192x192.png" />
-    <link rel="manifest" href="/Portafolio/manifest.webmanifest" />
-    
-    <!-- SEO Meta Tags -->
-    <title>Fidel Pizart | Backend Developer Portfolio</title>
-    <meta name="description" content="Portfolio profesional de desarrollador backend especializado en Python, FastAPI, PostgreSQL y desarrollo de APIs escalables" />
-    <meta name="keywords" content="backend developer, python, fastapi, postgresql, apis, portfolio, desarrollador backend" />
-    <meta name="author" content="Fidel Pizart" />
-    
-    <!-- GitHub Pages SPA redirect script -->
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-  </head>
-  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  
+  <title>Fidel Pizart | Backend Developer Portfolio</title>
+  <meta name="description" content="Portfolio profesional de desarrollador backend especializado en Python, FastAPI, PostgreSQL y desarrollo de APIs escalables" />
+  <meta name="author" content="Fidel Pizart" />
+  
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="FP Portfolio" />
+  
+  <link rel="icon" href="/Portafolio/favicon.ico" />
+  <link rel="apple-touch-icon" href="/Portafolio/pwa-192x192.png" />
+  <link rel="manifest" href="/Portafolio/manifest.webmanifest" />
+  
+  <script>
+    (function(l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
