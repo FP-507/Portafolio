@@ -8,9 +8,7 @@ export default function PWAPrompt() {
   const [isIOS, setIsIOS] = useState(false)
   const [isStandalone, setIsStandalone] = useState(false)
   const [showInstallPrompt, setShowInstallPrompt] = useState(false)
-  const [showUpdatePrompt, setShowUpdatePrompt] = useState(false)
   const [deferredPrompt, setDeferredPrompt] = useState(null)
-  const [registration, setRegistration] = useState(null)
 
   useEffect(() => {
     // Check if device is iOS
@@ -23,45 +21,18 @@ export default function PWAPrompt() {
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault()
       setDeferredPrompt(e)
-      setShowInstallPrompt(true)
+      
+      // Only show after a delay and if not dismissed recently
+      const dismissed = localStorage.getItem('installPromptDismissed')
+      if (!dismissed || Date.now() > parseInt(dismissed)) {
+        setTimeout(() => setShowInstallPrompt(true), 3000)
+      }
     }
 
     // Handle app installed event
     const handleAppInstalled = () => {
       setShowInstallPrompt(false)
       setDeferredPrompt(null)
-      console.log('PWA was installed')
-    }
-
-    // Register service worker and handle updates
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/Portafolio/sw.js')
-        .then((reg) => {
-          setRegistration(reg)
-          
-          // Check for waiting service worker
-          if (reg.waiting) {
-            setShowUpdatePrompt(true)
-          }
-
-          // Listen for updates
-          reg.addEventListener('updatefound', () => {
-            const newWorker = reg.installing
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                setShowUpdatePrompt(true)
-              }
-            })
-          })
-        })
-        .catch((error) => {
-          console.log('SW registration failed: ', error)
-        })
-
-      // Listen for controller change
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        window.location.reload()
-      })
     }
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
@@ -86,9 +57,8 @@ export default function PWAPrompt() {
   }
 
   const handleUpdateClick = () => {
-    if (registration && registration.waiting) {
-      registration.waiting.postMessage({ type: 'SKIP_WAITING' })
-    }
+    // Simplified update handling
+    window.location.reload()
   }
 
   const dismissInstallPrompt = () => {

@@ -7,8 +7,10 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      registerType: 'prompt',
+      injectRegister: 'auto',
+      base: '/Portafolio/',
+      scope: '/Portafolio/',
       manifest: {
         name: 'Fidel Pizart - Backend Developer Portfolio',
         short_name: 'FP Portfolio',
@@ -19,38 +21,34 @@ export default defineConfig({
         orientation: 'portrait',
         scope: '/Portafolio/',
         start_url: '/Portafolio/',
+        id: '/Portafolio/',
         icons: [
           {
-            src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=192&h=192&q=80',
+            src: 'pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=512&h=512&q=80',
+            src: 'pwa-512x512.png', 
             sizes: '512x512',
             type: 'image/png'
           }
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,jpg,jpeg}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        navigateFallback: '/Portafolio/index.html',
+        navigateFallbackDenylist: [/^\/_/, /\/[^\/]+\.[^\/]+$/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
             handler: 'CacheFirst',
             options: {
-              cacheName: 'unsplash-images',
+              cacheName: 'external-images',
               expiration: {
-                maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+                maxEntries: 30,
+                maxAgeSeconds: 7 * 24 * 60 * 60 // 7 days
               }
-            }
-          },
-          {
-            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'google-fonts-stylesheets'
             }
           }
         ]
