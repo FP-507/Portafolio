@@ -88,6 +88,8 @@
           <span class="tag" data-animate="pop" data-delay="250">Pandas</span>
           <span class="tag" data-animate="pop" data-delay="300">Git</span>
           <span class="tag" data-animate="pop" data-delay="350">Testing</span>
+          <span class="tag" data-animate="pop" data-delay="400">automatización</span>
+          <span class="tag" data-animate="pop" data-delay="450">Excel</span>
         </div>
       </section>
 
@@ -99,6 +101,7 @@
           <button class="filter-btn" data-filter="learning" data-i18n="filter_learning" aria-pressed="false">Learning</button>
           <button class="filter-btn" data-filter="game" data-i18n="filter_game" aria-pressed="false">Game</button>
           <button class="filter-btn" data-filter="bot" data-i18n="filter_bot" aria-pressed="false">Bot</button>
+          <button class="filter-btn" data-filter="automation" data-i18n="filter_automation" aria-pressed="false">Excel/VBA</button>
         </div>
         <div class="cards-grid">
           <article class="card project" data-animate="fade-up" data-delay="0" data-tags="python learning ai" data-project-id="p1">
@@ -118,6 +121,12 @@
             <div class="badges"><span class="badge">Bot</span><span class="badge">Python</span></div>
             <p data-i18n="proj3_desc">Plantilla para bots de Discord: comandos básicos, estructura modular y punto de partida para extender.</p>
             <a class="project_link" href="https://github.com/FP-507/Bot_Discord_plantilla.git" aria-label="Repositorio: Discord Bot" data-i18n="repo_label">Repositorio →</a>
+          </article>
+          <article class="card project" data-animate="fade-up" data-delay="360" data-tags="automation vba excel learning" data-project-id="p4">
+            <h3>Inventarios Automatizados</h3>
+            <div class="badges"><span class="badge">Excel</span><span class="badge">VBA</span><span class="badge">Automation</span></div>
+            <p data-i18n="proj4_desc">Creación de inventarios automatizados mediante macros y VBA.</p>
+            <a class="project_link" href="https://github.com/FP-507" aria-label="Repositorio: Inventarios Automatizados" data-i18n="repo_label">Repositorio →</a>
           </article>
         </div>
       </section>
@@ -152,9 +161,10 @@
           <article class="road-step" data-animate="fade-up" data-delay="300">
             <h3>Datos</h3>
             <ul class="plain">
-              <li>Archivos / CSV</li>
+            <li>Archivos / CSV</li>
               <li>Pandas básico</li>
-              <li>Consultas SQL</li>
+              <li data-i18n="roadmap_data_cyber">Fundamentos de ciberseguridad</li>
+              <li>Bases de datos SQL</li>
             </ul>
           </article>
           <article class="road-step" data-animate="fade-up" data-delay="400">
@@ -190,6 +200,13 @@
           <div class="tl_item" data-animate="fade-up" data-delay="0">
             <div class="tl_point"></div>
             <div class="tl_content">
+              <h3 data-i18n="timeline_2026">2026 · Desarrollo y lanzamiento de grandes proyectos</h3>
+              <p>Consolidación profesional con proyectos de mayor escala e impacto.</p>
+            </div>
+          </div>
+          <div class="tl_item" data-animate="fade-up" data-delay="120">
+            <div class="tl_point"></div>
+            <div class="tl_content">
               <h3 data-i18n="timeline_2025">2025 · Practicando y construyendo</h3>
               <p>Desarrollando proyectos personales para afianzar fundamentos: APIs, lectura de documentación, modularidad y pruebas básicas.</p>
             </div>
@@ -215,6 +232,6 @@
       </section>
     </main>
   </div>
-  <script src="script.js" defer></script>
+<script src="script-fixed.js" defer></script>
 </body>
 </html>
