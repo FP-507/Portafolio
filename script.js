@@ -5,7 +5,6 @@
   const langBtn = document.getElementById('langToggle');
   const THEME_KEY = 'pref-theme';
   const LANG_KEY = 'pref-lang';
-  // Modal eliminado: limpieza de variables relacionadas
 
   function applyTheme(theme){
     const dark = theme === 'dark';
@@ -48,21 +47,28 @@
       about_progress_title: 'En Proceso',
       about_progress_body: 'Fortaleciendo bases: estructuras de datos, buenas prácticas, lectura de documentación, pruebas y organización del código.',
       about_motivation_title: 'Lo que Me Motiva',
-  about_motivation_item1: 'Aprender algo nuevo cada semana',
-  about_motivation_item2: 'Escribir código claro',
-  about_motivation_item3: 'Automatizar lo repetitivo',\n  roadmap_data_cyber: 'Fundamentos de ciberseguridad',\n      skills_heading: 'Habilidades',
+      about_motivation_item1: 'Aprender algo nuevo cada semana',
+      about_motivation_item2: 'Escribir código claro',
+      about_motivation_item3: 'Automatizar lo repetitivo',
+      roadmap_data_cyber: 'Fundamentos de ciberseguridad',
+      skills_heading: 'Habilidades',
       projects_heading: 'Proyectos',
-  filter_all: 'Todos',
-  filter_ai: 'AI',
-  filter_learning: 'Learning',
-  filter_game: 'Game',\n  filter_bot: 'Bot',\n  filter_automation: 'Excel/VBA',
-  // Nombres de proyectos permanecen constantes (sin traducción)
-  proj1_desc: 'App para aprender inglés: práctica de conversación con una IA que responde a tu voz y registra tu progreso.',
-  proj2_desc: 'Juego de ajedrez donde una IA simple aprende patrones de tus partidas para ajustar su estilo.',
-  proj3_desc: 'Plantilla para bots de Discord: comandos básicos, estructura modular y punto de partida para extender.',\n  proj4_desc: 'Creación de inventarios automatizados mediante macros y VBA en Excel.',\n      repo_label: 'Repositorio →',
+      filter_all: 'Todos',
+      filter_ai: 'AI',
+      filter_learning: 'Learning',
+      filter_game: 'Game',
+      filter_bot: 'Bot',
+      filter_automation: 'Excel/VBA',
+      proj1_desc: 'App para aprender inglés: práctica de conversación con una IA que responde a tu voz y registra tu progreso.',
+      proj2_desc: 'Juego de ajedrez donde una IA simple aprende patrones de tus partidas para ajustar su estilo.',
+      proj3_desc: 'Plantilla para bots de Discord: comandos básicos, estructura modular y punto de partida para extender.',
+      proj4_desc: 'Creación de inventarios automatizados mediante macros y VBA en Excel.',
+      repo_label: 'Repositorio →',
       roadmap_heading: 'Ruta de Aprendizaje',
       timeline_heading: 'Línea de Tiempo',
-      timeline_2026: '2026 · Desarrollo y lanzamiento de grandes proyectos',\n      timeline_2025: '2025 · Practicando y construyendo',\n      timeline_2024: '2024 · Inicio en Python',
+      timeline_2026: '2026 · Desarrollo y lanzamiento de grandes proyectos',
+      timeline_2025: '2025 · Practicando y construyendo',
+      timeline_2024: '2024 · Inicio en Python',
       contact_heading: 'Contacto',
       contact_body: 'Si deseas ponerte en contacto, escríbeme por LinkedIn o GitHub. Abierto a colaborar y a retos interesantes.',
       lang_button: 'ES / EN'
@@ -78,22 +84,29 @@
       about_profile_body: 'I am a junior developer who started with Python in 2024. I learn by building small projects, API experiments and automation scripts.',
       about_progress_title: 'In Progress',
       about_progress_body: 'Strengthening foundations: data structures, good practices, reading docs, tests and code organization.',
-      about_motivation_title: 'What Motivates Me',
-  about_motivation_item1: 'Learn something new weekly',
-  about_motivation_item2: 'Write clear code',
-  about_motivation_item3: 'Automate the repetitive',\n  roadmap_data_cyber: 'Cybersecurity fundamentals',\n      skills_heading: 'Skills',
+      about_motivation_title: 'What Motivate Me',
+      about_motivation_item1: 'Learn something new weekly',
+      about_motivation_item2: 'Write clear code',
+      about_motivation_item3: 'Automate the repetitive',
+      roadmap_data_cyber: 'Cybersecurity fundamentals',
+      skills_heading: 'Skills',
       projects_heading: 'Projects',
-  filter_all: 'All',
-  filter_ai: 'AI',
-  filter_learning: 'Learning',
-  filter_game: 'Game',\n  filter_bot: 'Bot',\n  filter_automation: 'Excel/VBA',
-  // Project names remain constant (not translated)
-  proj1_desc: 'English learning app: conversational practice with an AI that reacts to your voice and tracks progress.',
-  proj2_desc: 'Chess game where a simple AI learns patterns from your games to adjust its style.',
-  proj3_desc: 'Discord bot template: basic commands, modular structure and a starting point to extend.',\n  proj4_desc: 'Automated inventory creation using macros and VBA in Excel.',\n      repo_label: 'Repo →',
+      filter_all: 'All',
+      filter_ai: 'AI',
+      filter_learning: 'Learning',
+      filter_game: 'Game',
+      filter_bot: 'Bot',
+      filter_automation: 'Excel/VBA',
+      proj1_desc: 'English learning app: conversational practice with an AI that reacts to your voice and tracks progress.',
+      proj2_desc: 'Chess game where a simple AI learns patterns from your games to adjust its style.',
+      proj3_desc: 'Discord bot template: basic commands, modular structure and a starting point to extend.',
+      proj4_desc: 'Automated inventory creation using macros and VBA in Excel.',
+      repo_label: 'Repo →',
       roadmap_heading: 'Learning Roadmap',
       timeline_heading: 'Timeline',
-      timeline_2026: '2026 · Development and launch of major projects',\n      timeline_2025: '2025 · Practicing and Building',\n      timeline_2024: '2024 · Getting Started with Python',
+      timeline_2026: '2026 · Development and launch of major projects',
+      timeline_2025: '2025 · Practicing and Building',
+      timeline_2024: '2024 · Getting Started with Python',
       contact_heading: 'Contact',
       contact_body: 'If you want to reach out, contact me on LinkedIn or GitHub. Open to collaboration and interesting challenges.',
       lang_button: 'EN / ES'
@@ -112,8 +125,6 @@
         }
       }
     });
-    // Re-aplicar aria-pressed text for filters after translation if needed (text already set via data-i18n)
-    // Actualizar atributo lang de <html>
     document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'es');
     langBtn && langBtn.setAttribute('data-lang', lang);
     langBtn && (langBtn.querySelector('.lang-label').textContent = dict.lang_button);
@@ -127,29 +138,7 @@
     const next = current === 'es' ? 'en' : 'es';
     localStorage.setItem(LANG_KEY, next);
     applyLanguage(next);
-    // Reaplicar estado activo después del cambio de idioma
-    const activeSection = document.querySelector('.menu_list a.active');
-    if(!activeSection){
-      // Forzar cálculo inicial evaluando la sección en el centro del contenedor
-      const scroller = document.querySelector('.container');
-      if(scroller){
-        const midpoint = scroller.scrollTop + scroller.clientHeight/2;
-        let currentId = null;
-        for(const sec of sections){
-          const top = sec.offsetTop;
-            const bottom = top + sec.offsetHeight;
-            if(midpoint >= top && midpoint < bottom){
-              currentId = sec.id; break;
-            }
-        }
-        if(currentId) setActive(currentId); else setActive(sections[0].id);
-      } else {
-        setActive(sections[0].id);
-      }
-    }
   });
-
-  // Lógica de modal eliminada (se conservan comentarios para histórico)
 
   // Intersection animations
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -199,12 +188,7 @@
       btn.style.setProperty('--ripple-y', y+'%');
       btn.classList.add('ripple-on');
       btn.querySelector('a').addEventListener('blur', ()=> btn.classList.remove('ripple-on'), { once:true });
-      // usar pseudo after via clase
-      btn.style.setProperty('--ripple-timestamp', Date.now());
-      const after = ()=>{
-        btn.classList.remove('ripple-on');
-      };
-      setTimeout(after, 650);
+      setTimeout(() => btn.classList.remove('ripple-on'), 650);
     });
   });
 
@@ -232,3 +216,4 @@
   // Inicial
   applyFilter('all');
 })();
+
