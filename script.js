@@ -441,21 +441,86 @@
   }
 
   // =========================================
-  // PAGE LOAD — SMOOTH ENTRANCE
+  // TERMINAL BOOT SEQUENCE
   // =========================================
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('pageLoader');
+  (function () {
+    const boot = document.getElementById('terminalBoot');
+    const linesEl = document.getElementById('terminalLines');
+    if (!boot || !linesEl) return;
 
-    // 1. Desvanece el loader suavemente
-    setTimeout(() => {
-      if (loader) loader.classList.add('gone');
-    }, 80);
+    // Skip terminal if reduced motion
+    if (prefersReduced) {
+      boot.classList.add('gone');
+      document.querySelectorAll('.hero [data-animate]').forEach(el => el.classList.add('in'));
+      return;
+    }
 
-    // 2. Hero elements entran en cascada después del loader
-    const heroEls = document.querySelectorAll('.hero [data-animate]');
-    heroEls.forEach(el => {
-      const delay = parseInt(el.getAttribute('data-delay') || 0);
-      setTimeout(() => el.classList.add('in'), 400 + delay * 1.4);
-    });
-  });
+    const LINES = [
+      { prompt: '> ', text: 'Initializing portfolio...',           speed: 14, pause: 80  },
+      { prompt: '> ', text: 'Loading: Python · Flet · AI/LLMs',   speed: 11, pause: 80  },
+      { prompt: '> ', text: 'Connecting to neural network...',     speed: 14, pause: 220 },
+      { prompt: '',   text: '',                                                pause: 60  },
+      { prompt: '',   text: 'FIDEL PIZART',   cls: 't-name',       speed: 65, pause: 520 },
+      { prompt: '> ', text: 'Ready.',         cls: 't-ready',      speed: 55, pause: 400 },
+    ];
+
+    function typeText(el, text, speed, cb) {
+      let i = 0;
+      (function tick() {
+        if (i < text.length) {
+          el.insertAdjacentText('beforeend', text[i++]);
+          setTimeout(tick, speed + (Math.random() - 0.3) * speed * 0.6);
+        } else { cb && cb(); }
+      })();
+    }
+
+    function addCursor(parent) {
+      const c = document.createElement('span');
+      c.className = 't-cursor';
+      parent.appendChild(c);
+      return c;
+    }
+
+    function exitTerminal() {
+      boot.classList.add('flicker');
+      boot.addEventListener('animationend', () => {
+        boot.classList.add('gone');
+        const heroEls = document.querySelectorAll('.hero [data-animate]');
+        heroEls.forEach(el => {
+          const d = parseInt(el.getAttribute('data-delay') || 0);
+          setTimeout(() => el.classList.add('in'), 280 + d * 1.3);
+        });
+      }, { once: true });
+    }
+
+    function runLine(i) {
+      if (i >= LINES.length) { exitTerminal(); return; }
+      const def = LINES[i];
+      const el = document.createElement('div');
+      el.className = 't-line' + (def.cls ? ' ' + def.cls : '');
+
+      if (!def.text) {
+        el.innerHTML = '&nbsp;';
+        linesEl.appendChild(el);
+        setTimeout(() => runLine(i + 1), def.pause || 80);
+        return;
+      }
+
+      if (def.prompt) {
+        const p = document.createElement('span');
+        p.className = 't-prompt';
+        p.textContent = def.prompt;
+        el.appendChild(p);
+      }
+
+      linesEl.appendChild(el);
+      const cur = addCursor(el);
+      typeText(el, def.text, def.speed || 14, () => {
+        cur.remove();
+        setTimeout(() => runLine(i + 1), def.pause || 100);
+      });
+    }
+
+    window.addEventListener('load', () => runLine(0));
+  })();
 })();
