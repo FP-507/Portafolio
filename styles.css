@@ -628,6 +628,55 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 body.theme-transition * { transition-duration: var(--dur-slow) !important; }
 
 /* ============================================
+   PAGE LOADER
+   ============================================ */
+.page-loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #04050a;
+  opacity: 1;
+  transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.page-loader.gone { opacity: 0; }
+
+/* ============================================
+   REFINED ENTRANCE ANIMATIONS
+   ============================================ */
+
+/* Expo-out easing for all animated elements */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity  0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-animate].in { opacity: 1; transform: none; }
+
+/* Hero name: scale + fade — impacto máximo */
+.hero-name[data-animate] {
+  transform: scale(0.88) translateY(20px);
+  filter: blur(6px);
+  transition:
+    opacity  1s   cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s   cubic-bezier(0.16, 1, 0.3, 1),
+    filter   1s   cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-name[data-animate].in {
+  transform: scale(1) translateY(0);
+  filter: blur(0);
+}
+
+/* Code window: entra desde la derecha */
+.hero-decoration[data-animate] {
+  transform: translateX(50px) translateY(0);
+  transition:
+    opacity  1s   cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s   cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-decoration[data-animate].in { transform: translateX(0); }
+
+/* ============================================
    ENHANCED ANIMATIONS
    ============================================ */
 

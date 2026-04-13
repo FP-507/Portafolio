@@ -441,13 +441,21 @@
   }
 
   // =========================================
-  // PAGE LOAD — HERO ENTRANCE ANIMATION
+  // PAGE LOAD — SMOOTH ENTRANCE
   // =========================================
   window.addEventListener('load', () => {
+    const loader = document.getElementById('pageLoader');
+
+    // 1. Desvanece el loader suavemente
+    setTimeout(() => {
+      if (loader) loader.classList.add('gone');
+    }, 80);
+
+    // 2. Hero elements entran en cascada después del loader
     const heroEls = document.querySelectorAll('.hero [data-animate]');
     heroEls.forEach(el => {
       const delay = parseInt(el.getAttribute('data-delay') || 0);
-      setTimeout(() => el.classList.add('in'), 200 + delay);
+      setTimeout(() => el.classList.add('in'), 400 + delay * 1.4);
     });
   });
 })();
