@@ -481,16 +481,19 @@
       return c;
     }
 
+    function revealPage() {
+      boot.classList.add('gone');
+      const heroEls = document.querySelectorAll('.hero [data-animate]');
+      heroEls.forEach(el => {
+        const d = parseInt(el.getAttribute('data-delay') || 0);
+        setTimeout(() => el.classList.add('in'), 280 + d * 1.3);
+      });
+    }
+
     function exitTerminal() {
       boot.classList.add('flicker');
-      boot.addEventListener('animationend', () => {
-        boot.classList.add('gone');
-        const heroEls = document.querySelectorAll('.hero [data-animate]');
-        heroEls.forEach(el => {
-          const d = parseInt(el.getAttribute('data-delay') || 0);
-          setTimeout(() => el.classList.add('in'), 280 + d * 1.3);
-        });
-      }, { once: true });
+      // Use timeout as reliable exit — animationend can be unreliable
+      setTimeout(revealPage, 420);
     }
 
     function runLine(i) {

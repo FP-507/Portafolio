@@ -637,7 +637,7 @@ body.theme-transition * { transition-duration: var(--dur-slow) !important; }
   transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .terminal-boot.flicker {
-  animation: termFlicker 0.35s steps(1) forwards;
+  animation: termFlicker 0.4s linear forwards;
 }
 .terminal-boot.gone { opacity: 0; pointer-events: none; }
 
