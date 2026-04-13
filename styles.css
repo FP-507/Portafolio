@@ -113,20 +113,9 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
    ============================================ */
 .bg-fx { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
 
-.bg-orb {
-  position: absolute; border-radius: 50%;
-  filter: blur(100px); opacity: 0.28;
-  animation: orbFloat 25s ease-in-out infinite alternate;
-}
-.theme-light .bg-orb { opacity: 0.1; }
-.bg-orb-1 { width: 700px; height: 700px; background: var(--accent); top: -200px; left: -150px; }
-.bg-orb-2 { width: 600px; height: 600px; background: var(--accent-2); bottom: -200px; right: -150px; animation-delay: -12s; animation-duration: 30s; }
-
-@keyframes orbFloat {
-  0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(60px, -40px) scale(1.1); }
-  66%  { transform: translate(-40px, 30px) scale(0.95); }
-  100% { transform: translate(30px, -20px) scale(1.05); }
+#neuralCanvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
 }
 
 .bg-grid {

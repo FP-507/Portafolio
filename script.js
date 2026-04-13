@@ -349,23 +349,105 @@
   }
 
   // =========================================
-  // BACKGROUND PARALLAX
+  // NEURAL NETWORK BACKGROUND
   // =========================================
   if (!prefersReduced) {
-    const orbs = document.querySelectorAll('.bg-orb');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          orbs.forEach((orb, i) => {
-            const speed = i === 0 ? 0.03 : 0.02;
-            orb.style.translate = `0px ${scrollY * speed}px`;
-          });
-          ticking = false;
-        });
-        ticking = true;
+    const nc = document.getElementById('neuralCanvas');
+    if (nc) {
+      const ctx = nc.getContext('2d');
+      let W, H;
+
+      function ncResize() {
+        W = nc.width = window.innerWidth;
+        H = nc.height = window.innerHeight;
       }
-    }, { passive: true });
+      ncResize();
+      window.addEventListener('resize', ncResize, { passive: true });
+
+      const N = 75;
+      const MAX_D = 170;
+      const CYAN = [0, 212, 255];
+      const PURP = [168, 85, 247];
+
+      const nodes = Array.from({ length: N }, () => {
+        const t = Math.random();
+        const c = t < 0.65 ? CYAN : PURP;
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          r: Math.random() * 1.8 + 0.6,
+          c,
+          phase: Math.random() * Math.PI * 2
+        };
+      });
+
+      function ncDraw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Connections
+        for (let i = 0; i < N; i++) {
+          for (let j = i + 1; j < N; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < MAX_D) {
+              const a = (1 - d / MAX_D) * 0.18;
+              const ci = nodes[i].c, cj = nodes[j].c;
+              const r = (ci[0] + cj[0]) >> 1;
+              const g = (ci[1] + cj[1]) >> 1;
+              const b = (ci[2] + cj[2]) >> 1;
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(${r},${g},${b},${a})`;
+              ctx.lineWidth = 0.7;
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Nodes
+        nodes.forEach(n => {
+          n.phase += 0.018;
+          const pr = n.r * (1 + Math.sin(n.phase) * 0.35);
+
+          // Outer glow
+          const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, pr * 5);
+          grad.addColorStop(0, `rgba(${n.c[0]},${n.c[1]},${n.c[2]},0.12)`);
+          grad.addColorStop(1, `rgba(${n.c[0]},${n.c[1]},${n.c[2]},0)`);
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, pr * 5, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+
+          // Core
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, pr, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${n.c[0]},${n.c[1]},${n.c[2]},0.85)`;
+          ctx.fill();
+
+          n.x += n.vx;
+          n.y += n.vy;
+          if (n.x < 0 || n.x > W) n.vx *= -1;
+          if (n.y < 0 || n.y > H) n.vy *= -1;
+        });
+
+        requestAnimationFrame(ncDraw);
+      }
+      ncDraw();
+    }
   }
+
+  // =========================================
+  // PAGE LOAD — HERO ENTRANCE ANIMATION
+  // =========================================
+  window.addEventListener('load', () => {
+    const heroEls = document.querySelectorAll('.hero [data-animate]');
+    heroEls.forEach(el => {
+      const delay = parseInt(el.getAttribute('data-delay') || 0);
+      setTimeout(() => el.classList.add('in'), 200 + delay);
+    });
+  });
 })();
