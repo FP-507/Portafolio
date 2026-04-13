@@ -481,19 +481,18 @@
       return c;
     }
 
-    function revealPage() {
-      boot.classList.add('gone');
-      const heroEls = document.querySelectorAll('.hero [data-animate]');
-      heroEls.forEach(el => {
-        const d = parseInt(el.getAttribute('data-delay') || 0);
-        setTimeout(() => el.classList.add('in'), 280 + d * 1.3);
-      });
-    }
-
     function exitTerminal() {
-      boot.classList.add('flicker');
-      // Use timeout as reliable exit — animationend can be unreliable
-      setTimeout(revealPage, 420);
+      // Fade out directly — no flicker class needed
+      boot.style.transition = 'opacity 0.9s cubic-bezier(0.4,0,0.2,1)';
+      boot.style.opacity = '0';
+      setTimeout(() => {
+        boot.style.display = 'none';
+        const heroEls = document.querySelectorAll('.hero [data-animate]');
+        heroEls.forEach(el => {
+          const d = parseInt(el.getAttribute('data-delay') || 0);
+          setTimeout(() => el.classList.add('in'), d * 1.3);
+        });
+      }, 950);
     }
 
     function runLine(i) {
