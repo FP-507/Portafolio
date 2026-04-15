@@ -216,7 +216,7 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
   min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   position: relative;
-  padding: var(--sp-3xl) var(--sp-lg);
+  padding: var(--sp-3xl) var(--sp-lg) 140px;
   text-align: center;
 }
 .hero-content { max-width: 700px; }
@@ -299,11 +299,12 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 .hero-social { display: flex; gap: var(--sp-md); justify-content: center; }
 .social-link img {
   width: 24px; height: 24px;
-  filter: grayscale(100%) brightness(0.6);
+  filter: brightness(0) invert(1);
   transition: all var(--dur-fast);
 }
 .theme-light .social-link img { filter: grayscale(100%) brightness(0.4); }
-.social-link:hover img { filter: none; transform: translateY(-2px); }
+.social-link:hover img { filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(0,212,255,0.7)); transform: translateY(-2px); }
+.theme-light .social-link:hover img { filter: grayscale(0%) brightness(0.6) saturate(2); }
 
 /* Scroll indicator */
 .hero-scroll {
@@ -978,6 +979,14 @@ body {
 @keyframes nameGlow {
   0%, 100% { background-position: 0% 50%; filter: drop-shadow(0 0 40px rgba(0,212,255,0.3)) drop-shadow(0 0 80px rgba(168,85,247,0.15)); }
   50%       { background-position: 100% 50%; filter: drop-shadow(0 0 80px rgba(0,212,255,0.5)) drop-shadow(0 0 160px rgba(168,85,247,0.3)); }
+}
+/* Light mode: replace white/light-cyan stops with dark saturated colors for contrast */
+.theme-light .hero-name {
+  background: linear-gradient(135deg, #005f8a 0%, #0099cc 30%, #00b8e0 55%, #a855f7 80%, #6d28d9 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  filter: drop-shadow(0 0 30px rgba(0,153,204,0.3)) drop-shadow(0 0 60px rgba(124,58,237,0.2)) !important;
 }
 
 /* Real glassmorphism cards */

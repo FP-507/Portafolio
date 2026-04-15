@@ -4,7 +4,7 @@
     {
       "name": "portfolio",
       "runtimeExecutable": "C:/Program Files/Python313/python",
-      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "C:/Users/FidelPizart/Documents/GitHub/Portafolio/.claude/worktrees/thirsty-meninsky"],
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "C:/Users/FidelPizart/Documents/GitHub/Portafolio"],
       "port": 3000
     }
   ]
