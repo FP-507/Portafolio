@@ -1472,3 +1472,5 @@ body::after {
   .node-dot { margin-bottom: 0; flex-shrink: 0; }
   .node-body ul.plain { display: flex; flex-wrap: wrap; gap: 0 var(--sp-md); }
 }
+/* Icon variant of the text badge (used for the cybersecurity bootcamp) */
+.cert-badge-sec svg { width: 32px; height: 32px; }

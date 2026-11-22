@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=22">
+  <link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
   <!-- Terminal boot -->
@@ -89,7 +89,7 @@
       </div>
       <dl class="hero-stats" data-animate="fade-up" data-delay="450">
         <div><dt data-i18n="stat_projects">Proyectos</dt><dd>10</dd></div>
-        <div><dt data-i18n="stat_certs">Certificaciones</dt><dd>6</dd></div>
+        <div><dt data-i18n="stat_certs">Certificaciones</dt><dd>7</dd></div>
         <div><dt data-i18n="stat_awards">Premios</dt><dd>2</dd></div>
         <div><dt data-i18n="stat_since">Programando desde</dt><dd>2024</dd></div>
       </dl>
@@ -120,7 +120,7 @@
           <div class="code-line"><span class="c-ln">3</span>    <span class="c-str">"dev"</span>: <span class="c-str">"Fidel Pizart"</span>,</div>
           <div class="code-line"><span class="c-ln">4</span>    <span class="c-str">"base"</span>: <span class="c-str">"Colón, Panamá"</span>,</div>
           <div class="code-line"><span class="c-ln">5</span>    <span class="c-str">"stack"</span>: <span class="c-str">"Python · Django · IA"</span>,</div>
-          <div class="code-line"><span class="c-ln">6</span>    <span class="c-str">"certs"</span>: <span class="c-val">6</span>,</div>
+          <div class="code-line"><span class="c-ln">6</span>    <span class="c-str">"certs"</span>: <span class="c-val">7</span>,</div>
           <div class="code-line"><span class="c-ln">7</span>    <span class="c-str">"disponible"</span>: <span class="c-val">True</span></div>
           <div class="code-line"><span class="c-ln">8</span>  }</div>
           <div class="code-line code-cursor"><span class="c-ln">9</span><span class="c-cursor"></span></div>
@@ -201,7 +201,7 @@
             <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
             <h3 data-i18n="svc4_title">Seguridad y calidad</h3>
             <p data-i18n="svc4_body">Auditoría de código, manejo seguro de contraseñas y tests automáticos con integración continua.</p>
-            <p class="service-proof"><span data-i18n="proof_label">Prueba:</span> Security Guard · <span data-i18n="proj_auditor_title">Auditor de Contraseñas</span></p>
+            <p class="service-proof"><span data-i18n="proof_label">Prueba:</span> Bootcamp DOJO · Security Guard · <span data-i18n="proj_auditor_title">Auditor de Contraseñas</span></p>
           </article>
         </div>
       </div>
@@ -427,18 +427,29 @@
             </div>
           </article>
           <article class="cert-card" data-animate="fade-up" data-delay="320">
-            <span class="cert-badge cert-badge-text" aria-hidden="true">B2</span>
+            <span class="cert-badge cert-badge-text cert-badge-sec" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
             <div>
-              <h3>TOEIC · B2</h3>
-              <p class="cert-issuer" data-i18n="cert_toeic_issuer">Inglés · ETS</p>
-              <p class="cert-date">2024 · 2025</p>
+              <h3 data-i18n="cert_cyber_title">Fundamentos de Ciberseguridad</h3>
+              <p class="cert-issuer">Fundación Comunidad DOJO · WoSec Panamá</p>
+              <p class="cert-date" data-i18n="cert_date_cyber">Marzo 2026 · Bootcamp de 22 h</p>
             </div>
           </article>
           <article class="cert-card" data-animate="fade-up" data-delay="400">
             <span class="cert-badge cert-badge-text" aria-hidden="true">AI</span>
             <div>
-              <h3 data-i18n="cert_ia_title">Desarrollo con IA</h3>
-              <p class="cert-issuer">MoureDev</p>
+              <h3 data-i18n="cert_ia_title">Iniciación al Desarrollo con IA</h3>
+              <p class="cert-issuer">MoureDev · BIG school</p>
+              <p class="cert-date" data-i18n="cert_date_ia">Octubre 2025 · 6 h</p>
+            </div>
+          </article>
+          <article class="cert-card" data-animate="fade-up" data-delay="480">
+            <span class="cert-badge cert-badge-text" aria-hidden="true">B2</span>
+            <div>
+              <h3>TOEIC · B2</h3>
+              <p class="cert-issuer" data-i18n="cert_toeic_issuer">Inglés · ETS</p>
+              <p class="cert-date">2024 · 2025</p>
             </div>
           </article>
         </div>
@@ -568,7 +579,7 @@
             <div class="node-body">
               <h3 data-i18n="rm6_title">Ciberseguridad</h3>
               <ul class="plain"><li>OWASP Top 10</li><li data-i18n="rm6_b">Hashing y secretos</li><li data-i18n="rm6_c">Auditoría de código</li></ul>
-              <span class="node-proof">Security Guard</span>
+              <span class="node-proof">Bootcamp DOJO</span>
             </div>
           </article>
           <article class="roadmap-node upcoming" data-animate="fade-up" data-delay="480">
@@ -603,6 +614,7 @@
                 <li><span class="tl-month" data-i18n="m_jun">Jun</span><span data-i18n="tl26_jun">Voluntariado con Hogar Eco y Fanlyc.</span></li>
                 <li><span class="tl-month" data-i18n="m_may">May</span><span data-i18n="tl26_may">Certificación Microsoft Excel Expert.</span></li>
                 <li><span class="tl-month" data-i18n="m_apr">Abr</span><span data-i18n="tl26_apr">Construcción de viviendas con TECHO en Buena Vista, Colón.</span></li>
+                <li><span class="tl-month" data-i18n="m_mar">Mar</span><span data-i18n="tl26_mar">Bootcamp Fundamentos de Ciberseguridad con Comunidad DOJO y WoSec Panamá (22 h).</span></li>
                 <li><span class="tl-month tl-month-star" aria-hidden="true">★</span><span data-i18n="tl26_star">TradeFlow Colón para la Expo ¡Supérate! 2026 y Security Guard.</span></li>
               </ul>
             </div>
@@ -614,7 +626,7 @@
               <h3 data-i18n="timeline_2025">Practicando y construyendo</h3>
               <ul class="tl-events">
                 <li><span class="tl-month" data-i18n="m_dec">Dic</span><span data-i18n="tl25_dec">Prácticas profesionales en World Logistic: documentación e inventarios.</span></li>
-                <li><span class="tl-month" data-i18n="m_oct">Oct</span><span data-i18n="tl25_oct">Certificación Microsoft Excel Associate.</span></li>
+                <li><span class="tl-month" data-i18n="m_oct">Oct</span><span data-i18n="tl25_oct">Certificación Microsoft Excel Associate y curso de Iniciación al Desarrollo con IA (MoureDev).</span></li>
                 <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl25_a">TOEIC nivel B2 en inglés.</span></li>
                 <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl25_b">Juegos con Pygame, chat en tiempo real, bots y APIs.</span></li>
               </ul>
@@ -675,6 +687,6 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=10" defer></script>
+  <script src="script.js?v=11" defer></script>
 </body>
 </html>
