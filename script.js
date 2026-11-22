@@ -3,7 +3,6 @@
   const root = document.documentElement;
   const body = document.body;
   const toggleBtn = document.getElementById('themeToggle');
-  const langBtn = document.getElementById('langToggle');
   const menuBtn = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
   const header = document.getElementById('header');
@@ -68,12 +67,13 @@
   // =========================================
   const translations = {
     es: {
-      hero_available: 'Disponible para proyectos',
+      hero_available: "Disponible para prácticas y proyectos",
       hero_name: 'Fidel Pizart',
-      hero_role: 'Desarrollador Python',
-      hero_desc: 'Construyo herramientas, automatizo procesos y aprendo en cada línea de código.',
-      hero_cta_projects: 'Ver Proyectos',
-      hero_cta_contact: 'Contactar',
+      meta_description: "Fidel Pizart, desarrollador Python en Colón, Panamá. Aplicaciones web, análisis de datos y diseño web, con proyectos publicados y demos en vivo.",
+      hero_role: "Desarrollador Python · Datos · Web",
+      hero_desc: "Convierto problemas reales en software que funciona: aplicaciones web, análisis de datos que guían decisiones y sitios con diseño propio. Desde Colón, Panamá.",
+      hero_cta_projects: "Ver mi trabajo",
+      hero_cta_contact: "Hablemos",
       nav_about: 'Sobre mí',
       nav_skills: 'Habilidades',
       nav_projects: 'Proyectos',
@@ -83,27 +83,27 @@
       stat_certs: 'Certificaciones',
       stat_awards: 'Premios',
       stat_since: 'Programando desde',
-      services_heading: 'Qué puedo aportar',
-      services_lead: 'Cuatro áreas donde ya tengo proyectos publicados y certificaciones que lo demuestran.',
+      services_heading: "Qué puedo aportar a tu equipo",
+      services_lead: "Cuatro áreas en las que ya entregué proyectos publicados, con código abierto y demos en vivo.",
       proof_label: 'Prueba:',
       svc1_title: 'Aplicaciones web',
-      svc1_body: 'Backends con Django y FastAPI, APIs REST con autenticación, tiempo real con WebSockets y tests automáticos.',
+      svc1_body: "Backends con Django y FastAPI: APIs seguras con autenticación y roles, colaboración en tiempo real y tests automáticos desde el primer día.",
       svc2_title: 'Análisis de datos',
-      svc2_body: 'SQL, Pandas y machine learning para responder preguntas de negocio, con dashboards en Power BI y en la web.',
+      svc2_body: "Del dato crudo a la decisión: SQL, Pandas y machine learning para saber qué canal rinde, qué cliente se va y cuánto pedir.",
       svc3_title: 'Diseño web',
-      svc3_body: 'Sitios con dirección de arte propia, sistemas de diseño accesibles y landings que convierten, sin depender de plantillas.',
+      svc3_body: "Sitios con identidad propia, sistemas de diseño accesibles y landings pensadas para convertir, sin plantillas.",
       svc4_title: 'IA y seguridad',
-      svc4_body: 'Modelos de lenguaje integrados en productos reales, auditoría de código y tests automáticos con integración continua.',
+      svc4_body: "IA integrada en productos reales y una mirada de seguridad en cada línea: auditoría de código e integración continua.",
       nav_contact: 'Contacto',
       about_heading: 'Sobre mí',
-      about_profile_title: 'Quién soy',
-      about_profile_body: 'Estudiante de Bachiller en Ciencias en Colón, Panamá, y desarrollador Python desde 2024. Aprendo construyendo: aplicaciones web, análisis de datos e IA aplicada a problemas reales, como un marketplace B2B para la Zona Libre de Colón. Certificado como Microsoft Excel Expert y en Python por Cisco.',
-      about_progress_title: 'En construcción',
-      about_progress_body: 'Profundizando en estructuras de datos, pruebas automatizadas, buenas prácticas y arquitectura de proyectos.',
-      about_motivation_title: 'Lo que Me Motiva',
-      about_motivation_item1: 'Aprender algo nuevo cada semana',
-      about_motivation_item2: 'Escribir código claro',
-      about_motivation_item3: 'Automatizar lo repetitivo',
+      about_profile_title: "Quién soy",
+      about_profile_body: "Soy desarrollador Python y estudiante de Bachiller en Ciencias en Colón, Panamá. Empecé a programar en 2024 con una regla: cada proyecto tiene que resolver algo concreto. Así nacieron un marketplace B2B para la Zona Libre de Colón, modelos que anticipan qué clientes se van y un lenguaje de programación propio. Tengo certificaciones de Microsoft (Excel Expert) y Cisco (Python Essentials 1 y 2), y trabajo en español e inglés.",
+      about_progress_title: "Cómo trabajo",
+      about_progress_body: "Entiendo el problema antes de escribir código, valido con datos y entrego con tests, documentación y una demo que cualquiera puede probar.",
+      about_motivation_title: "Lo que me mueve",
+      about_motivation_item1: "Resolver problemas reales, no ejercicios",
+      about_motivation_item2: "Código claro que otros puedan mantener",
+      about_motivation_item3: "Aprender algo nuevo cada semana",
       skills_heading: 'Habilidades',
       projects_heading: 'Proyectos',
       nav_certs: 'Certificaciones',
@@ -114,33 +114,33 @@
       filter_prog: "Programación",
       filter_design: "Diseño web",
       p_tradeflow_t: "TradeFlow Colón",
-      p_tradeflow_d: "Marketplace B2B para la Zona Libre de Colón: los compradores mayoristas descubren inventario verificado, los vendedores gestionan su tienda, planes SaaS y logística, y un panel de analítica con IA les da KPIs, pronósticos y un chat de consultas. Incluye panel de administración en React, app Android (TWA) y versión en inglés y español.",
+      p_tradeflow_d: "Mi proyecto más ambicioso: un marketplace B2B que conecta a compradores mayoristas con el inventario verificado de la Zona Libre de Colón. Los vendedores gestionan su tienda, planes SaaS y logística, y un panel con IA les entrega KPIs, pronósticos y respuestas al instante. Incluye panel de administración en React, app Android y versión bilingüe.",
       p_tradeflow_nota: "Código privado · Expo ¡Supérate! 2026",
       p_pulso_t: "Pulso Commerce",
-      p_pulso_d: "Analítica de e-commerce de punta a punta: modelo relacional, 5 consultas SQL, retención por cohortes, segmentación RFM y CAC/LTV por canal, en un dashboard interactivo. Hallazgo: Instagram Ads apenas recupera su costo (LTV:CAC 1,2x) frente a Email (10,4x).",
+      p_pulso_d: "¿Qué canales traen clientes que vuelven? Lo respondí para una tienda online ficticia con SQL, cohortes, segmentación RFM y CAC/LTV, en un dashboard interactivo. Resultado: Instagram Ads apenas recupera su costo (1,2x) mientras Email rinde 10,4x.",
       p_churn_t: "Predicción de abandono",
-      p_churn_d: "Modelo que predice qué clientes de una telecom van a cancelar (AUC 0,81) y elige a quién ofrecer retención según el beneficio: contactar al 30 % de mayor riesgo captura el 61 % de los abandonos y deja +$12 500, frente a −$19 500 si se contacta a todos.",
+      p_churn_d: "Un modelo que anticipa qué clientes de una telecom van a cancelar (AUC 0,81) y decide a quién ofrecer retención según el dinero en juego: contactar al 30 % más riesgoso salva el 61 % de las bajas y deja +$12 500, en lugar de perder $19 500. Datos sintéticos.",
       p_demanda_t: "Pronóstico de demanda",
-      p_demanda_d: "Pronóstico semanal para 12 series de un supermercado con feriados panameños. Un ensamble de Holt-Winters y Gradient Boosting reduce el error un 27 % frente a la línea base, validado con backtesting de origen móvil, y se convierte en plan de pedidos con stock de seguridad.",
+      p_demanda_d: "Cuánto pedir sin quedarse corto ni sobrar: pronóstico semanal para 12 series de un supermercado, con feriados panameños. Un ensamble de Holt-Winters y Gradient Boosting reduce el error un 27 % y se convierte en un plan de pedidos con stock de seguridad.",
       p_supplychain_t: "Inventario y Abastecimiento",
-      p_supplychain_d: "Análisis de la cadena de suministro de una distribuidora ficticia: nivel de servicio, clasificación ABC-XYZ, desempeño de proveedores y plan de reposición con stock de seguridad y EOQ. Libro de Excel con LAMBDA y matrices dinámicas, e informe de Power BI con 83 medidas DAX.",
+      p_supplychain_d: "Diagnóstico completo de la cadena de suministro de una distribuidora ficticia: nivel de servicio, clasificación ABC-XYZ, desempeño de proveedores y reposición con EOQ. Excel avanzado con LAMBDA y un informe de Power BI con 83 medidas DAX.",
       p_supplychain_nota: "Excel · Power BI",
       p_agenda_t: "Agenda Clínica",
-      p_agenda_d: "API REST de citas médicas con autenticación JWT y tres roles. Calcula turnos libres según el horario de cada médico, impide choques de horario y aplica la política de cancelación. Contraseñas con PBKDF2 y 16 tests de punta a punta.",
+      p_agenda_d: "Una API de citas médicas pensada para producción: autenticación JWT, tres roles, turnos calculados según el horario de cada médico y cero choques de agenda. Contraseñas con PBKDF2, Docker y 16 tests de punta a punta.",
       p_coral_t: "Coral · lenguaje en español",
-      p_coral_d: "Lenguaje de programación propio con palabras clave en español: lexer, parser Pratt, AST e intérprete con clausuras, escritos desde cero sin dependencias. Errores con línea y columna, 28 tests y un playground que lo ejecuta en el navegador.",
+      p_coral_d: "Creé mi propio lenguaje de programación, con palabras clave en español. Lexer, parser Pratt e intérprete con clausuras escritos desde cero, mensajes de error que señalan la columna exacta y un playground para probarlo en el navegador.",
       p_pizarra_t: "Pizarra · Kanban en tiempo real",
-      p_pizarra_d: "Tablero Kanban colaborativo: lo que una persona crea, mueve o borra aparece al instante para todas, con presencia de quién está conectado, arrastrar y soltar y reconexión automática. El servidor valida y difunde cada acción.",
+      p_pizarra_d: "Un Kanban donde todo el equipo trabaja a la vez: cada tarjeta que alguien crea o mueve aparece al instante en las demás pantallas, con presencia en vivo, arrastrar y soltar y reconexión automática por WebSockets.",
       p_securityguard_t: "Security Guard",
-      p_securityguard_d: "Auditor de seguridad para código, repositorios y sitios web: análisis estático con más de 25 patrones de vulnerabilidad, detección de secretos filtrados y revisión de dependencias con CVE conocidos, en un reporte priorizado.",
+      p_securityguard_d: "Un auditor que revisa código, repositorios y sitios web en busca de vulnerabilidades: más de 25 patrones, secretos filtrados y dependencias con CVE conocidos, en un reporte priorizado por riesgo.",
       p_asistente_t: "Asistente de Documentos IA",
-      p_asistente_d: "Pregúntale a tus apuntes: un buscador BM25 encuentra los fragmentos relevantes y Claude responde citando la fuente exacta.",
+      p_asistente_d: "Pregúntale a tus propios documentos: un buscador BM25 encuentra lo relevante y Claude responde citando la fuente exacta, para que cada respuesta se pueda verificar.",
       p_altura_t: "Altura · café de especialidad",
-      p_altura_d: "Sitio para una marca ficticia de café de Boquete: estilo editorial, ilustraciones en SVG, gráfico de altitud animado, configurador de suscripción con precio en vivo y guías de preparación con temporizador.",
+      p_altura_d: "Un sitio que se siente como la marca: dirección de arte editorial para una marca ficticia de café de Boquete, ilustraciones en SVG, gráfico de altitud animado, suscripción con precio en vivo y guías de preparación con temporizador.",
       p_prisma_t: "Prisma UI · sistema de diseño",
-      p_prisma_d: "Sistema de diseño con su documentación: colores en OKLCH que se retematizan en vivo, contraste WCAG calculado por cada color y componentes accesibles (formularios, pestañas, diálogo y tabla ordenable) con modo claro y oscuro.",
+      p_prisma_d: "Un sistema de diseño completo con su documentación: elige un color de marca y todo se retematiza manteniendo el contraste WCAG. Componentes accesibles, modo claro y oscuro, y código listo para copiar.",
       p_cuenta_t: "Cuenta Clara · landing SaaS",
-      p_cuenta_d: "Landing neo-brutalista para un SaaS ficticio de facturación en Panamá, con maqueta animada del producto, calculadora de ITBMS, calculadora de horas ahorradas y precios mensuales o anuales.",
+      p_cuenta_d: "Una landing con carácter para un SaaS ficticio de facturación en Panamá: estilo neo-brutalista, maqueta animada del producto y calculadoras de ITBMS y de horas ahorradas que convierten la visita en interés.",
       repo_label: 'Repositorio →',
       demo_label: 'Ver demo →',
       certs_heading: 'Certificaciones',
@@ -207,20 +207,20 @@
       tl24_c: 'Primer TOEIC B2.',
       timeline_2023: 'Primer premio',
       timeline_2023_body: '1.er lugar en la Feria de Ciencias del Colegio Abel Bravo.',
-      contact_heading: 'Hablemos',
-      contact_body: 'Si tienes un proyecto, una idea o simplemente quieres conectar — escríbeme. Siempre abierto a colaborar.',
+      contact_heading: "Hablemos",
+      contact_body: "¿Tienes un proyecto, una vacante o una idea que quieres llevar a cabo? Escríbeme: respondo rápido y me encantan los buenos retos.",
       cta_linkedin: 'Conectar en LinkedIn',
       cta_email: 'Enviar Email',
       cta_github: 'Ver GitHub',
-      lang_button: 'ES / EN'
     },
     en: {
-      hero_available: 'Available for projects',
+      hero_available: "Available for internships and projects",
       hero_name: 'Fidel Pizart',
-      hero_role: 'Python Developer',
-      hero_desc: 'I build tools, automate processes and learn with every line of code.',
-      hero_cta_projects: 'View Projects',
-      hero_cta_contact: 'Contact',
+      meta_description: "Fidel Pizart, Python developer in Colón, Panama. Web apps, data analysis and web design, with published projects and live demos.",
+      hero_role: "Python Developer · Data · Web",
+      hero_desc: "I turn real problems into working software: web apps, data analysis that drives decisions and websites with original design. Based in Colón, Panama.",
+      hero_cta_projects: "See my work",
+      hero_cta_contact: "Let's talk",
       nav_about: 'About',
       nav_skills: 'Skills',
       nav_projects: 'Projects',
@@ -230,27 +230,27 @@
       stat_certs: 'Certifications',
       stat_awards: 'Awards',
       stat_since: 'Coding since',
-      services_heading: 'What I can bring',
-      services_lead: 'Four areas where I already have published projects and certifications to show for it.',
+      services_heading: "What I bring to your team",
+      services_lead: "Four areas where I've already shipped published projects, with open code and live demos.",
       proof_label: 'Proof:',
       svc1_title: 'Web applications',
-      svc1_body: 'Backends with Django and FastAPI, authenticated REST APIs, real-time WebSockets and automated tests.',
+      svc1_body: "Django and FastAPI backends: secure APIs with authentication and roles, real-time collaboration and automated tests from day one.",
       svc2_title: 'Data analysis',
-      svc2_body: 'SQL, Pandas and machine learning to answer business questions, with dashboards in Power BI and on the web.',
+      svc2_body: "From raw data to decisions: SQL, Pandas and machine learning to know which channel pays off, which customer is leaving and how much to order.",
       svc3_title: 'Web design',
-      svc3_body: 'Sites with their own art direction, accessible design systems and landing pages that convert, no templates.',
+      svc3_body: "Sites with their own identity, accessible design systems and landing pages built to convert, no templates.",
       svc4_title: 'AI & security',
-      svc4_body: 'Language models built into real products, code auditing and automated tests with continuous integration.',
+      svc4_body: "AI built into real products and a security mindset in every line: code auditing and continuous integration.",
       nav_contact: 'Contact',
       about_heading: 'About Me',
-      about_profile_title: 'Who I am',
-      about_profile_body: 'Science high-school student in Colón, Panama, and Python developer since 2024. I learn by building: web apps, data analysis and AI applied to real problems, like a B2B marketplace for the Colón Free Trade Zone. Certified Microsoft Excel Expert and Cisco-certified in Python.',
-      about_progress_title: 'Under construction',
-      about_progress_body: 'Diving deeper into data structures, automated tests, best practices and project architecture.',
-      about_motivation_title: 'What Motivates Me',
-      about_motivation_item1: 'Learn something new weekly',
-      about_motivation_item2: 'Write clear code',
-      about_motivation_item3: 'Automate the repetitive',
+      about_profile_title: "Who I am",
+      about_profile_body: "I'm a Python developer and science high-school student in Colón, Panama. I started coding in 2024 with one rule: every project has to solve something concrete. That led to a B2B marketplace for the Colón Free Trade Zone, models that predict which customers will leave, and my own programming language. I hold Microsoft (Excel Expert) and Cisco (Python Essentials 1 & 2) certifications and work in Spanish and English.",
+      about_progress_title: "How I work",
+      about_progress_body: "I understand the problem before writing code, validate with data, and ship with tests, documentation and a demo anyone can try.",
+      about_motivation_title: "What drives me",
+      about_motivation_item1: "Solving real problems, not exercises",
+      about_motivation_item2: "Clear code others can maintain",
+      about_motivation_item3: "Learning something new every week",
       skills_heading: 'Skills',
       projects_heading: 'Projects',
       nav_certs: 'Certifications',
@@ -261,33 +261,33 @@
       filter_prog: "Programming",
       filter_design: "Web design",
       p_tradeflow_t: "TradeFlow Colón",
-      p_tradeflow_d: "B2B marketplace for the Colón Free Trade Zone: wholesale buyers discover verified inventory, sellers manage their store, SaaS plans and logistics, and an AI analytics panel gives them KPIs, forecasts and a Q&A chat. Includes a React admin panel, an Android app (TWA) and English and Spanish versions.",
+      p_tradeflow_d: "My most ambitious project: a B2B marketplace connecting wholesale buyers with verified inventory from the Colón Free Trade Zone. Sellers manage their store, SaaS plans and logistics, while an AI panel delivers KPIs, forecasts and instant answers. Includes a React admin panel, an Android app and a bilingual version.",
       p_tradeflow_nota: "Private code · Expo ¡Supérate! 2026",
       p_pulso_t: "Pulso Commerce",
-      p_pulso_d: "End-to-end e-commerce analytics: relational model, 5 SQL queries, cohort retention, RFM segmentation and CAC/LTV by channel, in an interactive dashboard. Finding: Instagram Ads barely pays back (1.2x LTV:CAC) versus Email (10.4x).",
+      p_pulso_d: "Which channels bring customers who come back? I answered it for a fictional online store with SQL, cohorts, RFM segmentation and CAC/LTV, in an interactive dashboard. Result: Instagram Ads barely pays back (1.2x) while Email returns 10.4x.",
       p_churn_t: "Churn Prediction",
-      p_churn_d: "Model that predicts which telecom customers will cancel (0.81 AUC) and picks who gets a retention offer by profit: contacting the riskiest 30% catches 61% of churners and earns +$12,500, versus −$19,500 if everyone is contacted.",
+      p_churn_d: "A model that predicts which telecom customers will cancel (0.81 AUC) and decides who gets a retention offer based on the money at stake: contacting the riskiest 30% catches 61% of churners and earns +$12,500 instead of losing $19,500. Synthetic data.",
       p_demanda_t: "Demand Forecasting",
-      p_demanda_d: "Weekly forecasting for 12 supermarket series with Panamanian holidays. A Holt-Winters + Gradient Boosting ensemble cuts error by 27% versus the baseline, validated with rolling-origin backtesting, and turns into an order plan with safety stock.",
+      p_demanda_d: "How much to order without running short or overstocking: weekly forecasts for 12 supermarket series, including Panamanian holidays. A Holt-Winters + Gradient Boosting ensemble cuts error by 27% and becomes an order plan with safety stock.",
       p_supplychain_t: "Inventory & Supply Planning",
-      p_supplychain_d: "Supply-chain analysis for a fictional distributor: service level, ABC-XYZ classification, supplier performance and a replenishment plan with safety stock and EOQ. Excel workbook with LAMBDA and dynamic arrays, plus a Power BI report with 83 DAX measures.",
+      p_supplychain_d: "A full supply-chain diagnosis for a fictional distributor: service level, ABC-XYZ classification, supplier performance and EOQ replenishment. Advanced Excel with LAMBDA and a Power BI report with 83 DAX measures.",
       p_supplychain_nota: "Excel · Power BI",
       p_agenda_t: "Clinic Scheduler API",
-      p_agenda_d: "REST API for medical appointments with JWT auth and three roles. It computes free slots from each doctor's schedule, prevents double booking and enforces the cancellation policy. PBKDF2 passwords and 16 end-to-end tests.",
+      p_agenda_d: "A medical appointment API built for production: JWT auth, three roles, slots computed from each doctor's schedule and zero double bookings. PBKDF2 passwords, Docker and 16 end-to-end tests.",
       p_coral_t: "Coral · a Spanish language",
-      p_coral_d: "My own programming language with Spanish keywords: lexer, Pratt parser, AST and an interpreter with closures, written from scratch with no dependencies. Errors with line and column, 28 tests and a playground that runs it in the browser.",
+      p_coral_d: "I built my own programming language, with Spanish keywords. Lexer, Pratt parser and an interpreter with closures written from scratch, error messages that point to the exact column, and a playground to try it in the browser.",
       p_pizarra_t: "Pizarra · Real-time Kanban",
-      p_pizarra_d: "Collaborative Kanban board: whatever one person creates, moves or deletes shows up instantly for everyone, with presence, drag and drop and automatic reconnection. The server validates and broadcasts every action.",
+      p_pizarra_d: "A Kanban board where the whole team works at once: every card someone creates or moves appears instantly on everyone's screen, with live presence, drag and drop and automatic reconnection over WebSockets.",
       p_securityguard_t: "Security Guard",
-      p_securityguard_d: "Security auditor for code, repositories and websites: static analysis with 25+ vulnerability patterns, leaked-secret detection and dependency checks against known CVEs, in a prioritized report.",
+      p_securityguard_d: "An auditor that scans code, repositories and websites for vulnerabilities: 25+ patterns, leaked secrets and dependencies with known CVEs, in a risk-prioritized report.",
       p_asistente_t: "AI Document Assistant",
-      p_asistente_d: "Ask your own notes: a BM25 search finds the relevant passages and Claude answers citing the exact source.",
+      p_asistente_d: "Ask your own documents: a BM25 search finds what's relevant and Claude answers citing the exact source, so every answer can be checked.",
       p_altura_t: "Altura · specialty coffee",
-      p_altura_d: "Website for a fictional coffee brand from Boquete: editorial art direction, SVG illustrations, an animated altitude chart, a subscription builder with live pricing and brew guides with a timer.",
+      p_altura_d: "A site that feels like the brand: editorial art direction for a fictional coffee brand from Boquete, SVG illustrations, an animated altitude chart, a subscription with live pricing and brew guides with a timer.",
       p_prisma_t: "Prisma UI · design system",
-      p_prisma_d: "Design system with its own docs: OKLCH colors that re-theme live, WCAG contrast computed for every color and accessible components (forms, tabs, dialog, sortable table) with light and dark modes.",
+      p_prisma_d: "A complete design system with its own docs: pick a brand color and everything re-themes while keeping WCAG contrast. Accessible components, light and dark modes, and copy-ready code.",
       p_cuenta_t: "Cuenta Clara · SaaS landing",
-      p_cuenta_d: "Neo-brutalist landing page for a fictional invoicing SaaS in Panama, with an animated product mockup, a sales-tax (ITBMS) calculator, a time-saved calculator and monthly or yearly pricing.",
+      p_cuenta_d: "A landing page with personality for a fictional invoicing SaaS in Panama: neo-brutalist style, an animated product mockup, and sales-tax and time-saved calculators that turn visits into interest.",
       repo_label: 'Repo →',
       demo_label: 'Live demo →',
       certs_heading: 'Certifications',
@@ -354,12 +354,11 @@
       tl24_c: 'First TOEIC B2.',
       timeline_2023: 'First award',
       timeline_2023_body: '1st place at the Colegio Abel Bravo Science Fair.',
-      contact_heading: "Let's Talk",
-      contact_body: 'Have a project, an idea or just want to connect — reach out. Always open to collaborating.',
+      contact_heading: "Let's talk",
+      contact_body: "Have a project, an opening or an idea you want to build? Write to me: I reply fast and love a good challenge.",
       cta_linkedin: 'Connect on LinkedIn',
       cta_email: 'Send Email',
       cta_github: 'View GitHub',
-      lang_button: 'EN / ES'
     }
   };
 
@@ -376,24 +375,23 @@
       }
     });
     root.setAttribute('lang', lang === 'en' ? 'en' : 'es');
-    if (langBtn) {
-      langBtn.setAttribute('data-lang', lang);
-      const label = langBtn.querySelector('.lang-label');
-      if (label) label.textContent = dict.lang_button;
-    }
+    langButtons.forEach(b => b.setAttribute('aria-pressed', b.dataset.setLang === lang ? 'true' : 'false'));
+    if (dict.meta_description) document.querySelector('meta[name="description"]')?.setAttribute('content', dict.meta_description);
     // Re-trigger typing effect
     typeHeroRole(dict.hero_role);
   }
 
-  const storedLang = localStorage.getItem(LANG_KEY) || 'es';
-  applyLanguage(storedLang);
+  const langButtons = Array.from(document.querySelectorAll('[data-set-lang]'));
+  let storedLang = null;
+  try { storedLang = localStorage.getItem(LANG_KEY); } catch (e) { /* almacenamiento bloqueado */ }
+  // Sin preferencia guardada, se usa el idioma del navegador.
+  applyLanguage(storedLang || ((navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en'));
 
-  langBtn && langBtn.addEventListener('click', () => {
-    const current = langBtn.getAttribute('data-lang') || 'es';
-    const next = current === 'es' ? 'en' : 'es';
-    localStorage.setItem(LANG_KEY, next);
-    applyLanguage(next);
-  });
+  langButtons.forEach(b => b.addEventListener('click', () => {
+    const lang = b.dataset.setLang;
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* sin persistencia */ }
+    applyLanguage(lang);
+  }));
 
   // =========================================
   // MOBILE MENU
@@ -460,25 +458,37 @@
   // =========================================
   // ACTIVE NAV HIGHLIGHT
   // =========================================
-  const sectionIds = ['about', 'services', 'projects', 'certs', 'achievements', 'roadmap', 'contact'];
-  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  // Se usa la posición de scroll (no un umbral de intersección), así funciona con secciones de
+  // cualquier altura, como Proyectos. Las secciones sin enlace propio resaltan el más cercano.
+  const sections = Array.from(document.querySelectorAll('main section[id]'));
   const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+  const ENLACE_DE = { skills: 'services', timeline: 'roadmap' };
+  let activeId = null;
 
   function setActive(id) {
+    if (id === activeId) return;
+    activeId = id;
     navLinks.forEach(a => {
-      const match = a.getAttribute('href') === '#' + id;
+      const match = id !== null && a.getAttribute('href') === '#' + id;
       a.classList.toggle('active', match);
-      if (match) a.setAttribute('aria-current', 'page');
+      if (match) a.setAttribute('aria-current', 'location');
       else a.removeAttribute('aria-current');
     });
   }
 
-  const obsNav = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) setActive(e.target.id);
-    });
-  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.1 });
-  sections.forEach(sec => obsNav.observe(sec));
+  function updateActiveNav() {
+    const linea = window.innerHeight * 0.35;
+    let actual = null;
+    for (const sec of sections) {
+      if (sec.getBoundingClientRect().top <= linea) actual = sec.id;
+    }
+    // Al llegar al final de la página, el último enlace (Contacto) queda activo.
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) actual = 'contact';
+    setActive(actual ? (ENLACE_DE[actual] || actual) : null);
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  window.addEventListener('resize', updateActiveNav);
+  updateActiveNav();
 
   // =========================================
   // PROJECT FILTERS
