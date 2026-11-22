@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
   <!-- Terminal boot -->
@@ -45,12 +45,11 @@
       <nav class="nav" id="mainNav" aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a href="#about"    class="nav-link" data-i18n="nav_about">Sobre mí</a></li>
-          <li><a href="#skills"   class="nav-link" data-i18n="nav_skills">Habilidades</a></li>
+          <li><a href="#services" class="nav-link" data-i18n="nav_services">Qué hago</a></li>
           <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Proyectos</a></li>
           <li><a href="#certs"    class="nav-link" data-i18n="nav_certs">Certificaciones</a></li>
           <li><a href="#achievements" class="nav-link" data-i18n="nav_achievements">Logros</a></li>
-          <li><a href="#roadmap"  class="nav-link" data-i18n="nav_roadmap">Ruta</a></li>
-          <li><a href="#timeline" class="nav-link" data-i18n="nav_timeline">Historial</a></li>
+          <li><a href="#roadmap"  class="nav-link" data-i18n="nav_roadmap">Trayectoria</a></li>
           <li><a href="#contact"  class="nav-link" data-i18n="nav_contact">Contacto</a></li>
         </ul>
       </nav>
@@ -88,6 +87,12 @@
         <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_projects">Ver Proyectos</a>
         <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_contact">Contactar</a>
       </div>
+      <dl class="hero-stats" data-animate="fade-up" data-delay="450">
+        <div><dt data-i18n="stat_projects">Proyectos</dt><dd>10</dd></div>
+        <div><dt data-i18n="stat_certs">Certificaciones</dt><dd>6</dd></div>
+        <div><dt data-i18n="stat_awards">Premios</dt><dd>2</dd></div>
+        <div><dt data-i18n="stat_since">Programando desde</dt><dd>2024</dd></div>
+      </dl>
       <div class="hero-social" data-animate="fade-up" data-delay="500">
         <a href="https://github.com/FP-507" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
           <img src="assets/github.svg" alt="">
@@ -113,11 +118,12 @@
           <div class="code-line"><span class="c-ln">1</span><span class="c-kw">def</span> <span class="c-fn">portfolio</span>():</div>
           <div class="code-line"><span class="c-ln">2</span>  <span class="c-kw">return</span> {</div>
           <div class="code-line"><span class="c-ln">3</span>    <span class="c-str">"dev"</span>: <span class="c-str">"Fidel Pizart"</span>,</div>
-          <div class="code-line"><span class="c-ln">4</span>    <span class="c-str">"stack"</span>: [<span class="c-str">"Python"</span>, <span class="c-str">"AI"</span>],</div>
-          <div class="code-line"><span class="c-ln">5</span>    <span class="c-str">"open_to"</span>: <span class="c-str">"proyectos"</span>,</div>
-          <div class="code-line"><span class="c-ln">6</span>    <span class="c-str">"disponible"</span>: <span class="c-val">True</span></div>
-          <div class="code-line"><span class="c-ln">7</span>  }</div>
-          <div class="code-line code-cursor"><span class="c-ln">8</span><span class="c-cursor"></span></div>
+          <div class="code-line"><span class="c-ln">4</span>    <span class="c-str">"base"</span>: <span class="c-str">"Colón, Panamá"</span>,</div>
+          <div class="code-line"><span class="c-ln">5</span>    <span class="c-str">"stack"</span>: <span class="c-str">"Python · Django · IA"</span>,</div>
+          <div class="code-line"><span class="c-ln">6</span>    <span class="c-str">"certs"</span>: <span class="c-val">6</span>,</div>
+          <div class="code-line"><span class="c-ln">7</span>    <span class="c-str">"disponible"</span>: <span class="c-val">True</span></div>
+          <div class="code-line"><span class="c-ln">8</span>  }</div>
+          <div class="code-line code-cursor"><span class="c-ln">9</span><span class="c-cursor"></span></div>
         </div>
         <div class="code-footer">
           <span class="c-badge">Python 3.13</span>
@@ -164,11 +170,48 @@
       </div>
     </section>
 
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-num">02</span>
+          <h2 data-i18n="services_heading">Qué puedo aportar</h2>
+          <p class="section-lead" data-i18n="services_lead">Cuatro áreas donde ya tengo proyectos y certificaciones que lo demuestran.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-animate="fade-up" data-delay="0">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14l-2 2 2 2M16 14l2 2-2 2"/></svg></span>
+            <h3 data-i18n="svc1_title">Aplicaciones web</h3>
+            <p data-i18n="svc1_body">Backends con Django y FastAPI, bases de datos SQL y APIs REST, de la idea al despliegue.</p>
+            <p class="service-proof"><span data-i18n="proof_label">Prueba:</span> TradeFlow Colón · <span data-i18n="proj_api_title">API de Tareas</span></p>
+          </article>
+          <article class="service-card" data-animate="fade-up" data-delay="80">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <h3 data-i18n="svc2_title">Datos y reportes</h3>
+            <p data-i18n="svc2_body">Limpieza de datos, dashboards en Excel y Power BI, y análisis con Pandas que terminan en decisiones.</p>
+            <p class="service-proof"><span data-i18n="proof_label">Prueba:</span> Excel Expert · <span data-i18n="proj_supply_title">Inventario y Abastecimiento</span></p>
+          </article>
+          <article class="service-card" data-animate="fade-up" data-delay="160">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+            <h3 data-i18n="svc3_title">IA aplicada</h3>
+            <p data-i18n="svc3_body">Integración de modelos de lenguaje en productos reales: asistentes con citas, búsqueda y analítica.</p>
+            <p class="service-proof"><span data-i18n="proof_label">Prueba:</span> <span data-i18n="proj_asistente_title">Asistente de Documentos IA</span></p>
+          </article>
+          <article class="service-card" data-animate="fade-up" data-delay="240">
+            <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3 data-i18n="svc4_title">Seguridad y calidad</h3>
+            <p data-i18n="svc4_body">Auditoría de código, manejo seguro de contraseñas y tests automáticos con integración continua.</p>
+            <p class="service-proof"><span data-i18n="proof_label">Prueba:</span> Security Guard · <span data-i18n="proj_auditor_title">Auditor de Contraseñas</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Skills -->
     <section id="skills" class="section">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">02</span>
+          <span class="section-num">03</span>
           <h2 data-i18n="skills_heading">Habilidades</h2>
         </div>
         <div class="skills-grid">
@@ -220,10 +263,6 @@
                 <svg class="skill-icon skill-icon--svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 20V14M12 20V8M18 20V4"/></svg>
                 Power BI
               </span>
-              <span class="skill-tag">
-                <svg class="skill-icon skill-icon--svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="5" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h10M12 7v10M6.5 10.5l4-4M13.5 17.5l4-4"/></svg>
-                Machine Learning
-              </span>
             </div>
           </div>
           <div class="skill-group" data-animate="fade-up" data-delay="160">
@@ -255,7 +294,7 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">03</span>
+          <span class="section-num">04</span>
           <h2 data-i18n="projects_heading">Proyectos</h2>
         </div>
         <div class="project-filters" role="toolbar" aria-label="Filtros proyectos" data-animate="fade-up">
@@ -274,64 +313,50 @@
             <p data-i18n="proj_tradeflow_desc">Marketplace B2B para la Zona Libre de Colón: los compradores mayoristas descubren inventario verificado, los vendedores gestionan su tienda, planes SaaS y logística, y un panel de analítica con IA les da KPIs, pronósticos y un chat de consultas. Incluye panel de administración en React, app Android (TWA) y versión en inglés y español.</p>
             <div class="project-links"><span class="project-note" data-i18n="proj_tradeflow_note">Código privado · Expo ¡Supérate! 2026</span></div>
           </article>
-          <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="ai" data-project-id="signscan">
+          <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="security" data-project-id="securityguard">
             <span class="project-num" aria-hidden="true">02</span>
-            <h3 class="project-title">SignScan</h3>
-            <div class="badges"><span class="badge">MediaPipe</span><span class="badge">Machine Learning</span><span class="badge">Python</span></div>
-            <p data-i18n="proj_signscan_desc">Traductor de lenguaje de señas en tiempo real con la webcam: detecta las manos, extrae sus puntos clave y los traduce a texto. Usa RandomForest para señas estáticas y una red BiLSTM para palabras con movimiento.</p>
-            <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/SignScan" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
-          </article>
-          <article class="project-card project" data-animate="fade-up" data-delay="120" data-tags="security" data-project-id="securityguard">
-            <span class="project-num" aria-hidden="true">03</span>
             <h3 class="project-title">Security Guard</h3>
             <div class="badges"><span class="badge">DevSecOps</span><span class="badge">OWASP</span><span class="badge">Python</span></div>
             <p data-i18n="proj_securityguard_desc">Auditor de seguridad para código, repositorios y sitios web: análisis estático con más de 25 patrones de vulnerabilidad, detección de secretos filtrados y revisión de dependencias con CVE conocidos, en un reporte priorizado.</p>
             <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/Security_Guard" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
           </article>
-          <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="apps" data-project-id="toba">
-            <span class="project-num" aria-hidden="true">04</span>
-            <h3 class="project-title">Töbá · <span data-i18n="proj_toba_title">Lengua Guna</span></h3>
-            <div class="badges"><span class="badge">Flet</span><span class="badge">SQLite</span><span class="badge">Python</span></div>
-            <p data-i18n="proj_toba_desc">App de escritorio para aprender Guna (Dulegaya), la lengua del pueblo Guna de Panamá: 8 cursos, traductor español–guna con pronunciación, información cultural y seguimiento de progreso.</p>
-            <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/toba-app" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
-          </article>
           <article class="project-card project" data-animate="fade-up" data-delay="120" data-tags="data" data-project-id="supplychain">
-            <span class="project-num" aria-hidden="true">05</span>
+            <span class="project-num" aria-hidden="true">03</span>
             <h3 class="project-title" data-i18n="proj_supply_title">Inventario y Abastecimiento</h3>
             <div class="badges"><span class="badge">Excel 365</span><span class="badge">Power BI</span><span class="badge">DAX</span><span class="badge">Power Query</span></div>
             <p data-i18n="proj_supply_desc">Análisis de la cadena de suministro de una distribuidora ficticia: nivel de servicio, clasificación ABC-XYZ, desempeño de proveedores y plan de reposición con stock de seguridad y EOQ. Libro de Excel con LAMBDA y matrices dinámicas, e informe de Power BI con 83 medidas DAX.</p>
             <div class="project-links"><span class="project-note">Excel · Power BI</span></div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="ai" data-project-id="asistente">
-            <span class="project-num" aria-hidden="true">06</span>
+            <span class="project-num" aria-hidden="true">04</span>
             <h3 class="project-title" data-i18n="proj_asistente_title">Asistente de Documentos IA</h3>
             <div class="badges"><span class="badge">Claude API</span><span class="badge">RAG</span><span class="badge">Python</span></div>
             <p data-i18n="proj_asistente_desc">Pregúntale a tus apuntes: un buscador BM25 encuentra los fragmentos relevantes y Claude responde citando la fuente exacta.</p>
             <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/asistente-docs-ia" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="120" data-tags="apps" data-project-id="api">
-            <span class="project-num" aria-hidden="true">07</span>
+            <span class="project-num" aria-hidden="true">05</span>
             <h3 class="project-title" data-i18n="proj_api_title">API de Tareas</h3>
             <div class="badges"><span class="badge">FastAPI</span><span class="badge">SQL</span><span class="badge">pytest</span></div>
             <p data-i18n="proj_api_desc">API REST con FastAPI y SQLite: filtros, paginación y estadísticas, con tests automáticos y CI en GitHub Actions.</p>
             <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/api-tareas" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="security" data-project-id="auditor">
-            <span class="project-num" aria-hidden="true">08</span>
+            <span class="project-num" aria-hidden="true">06</span>
             <h3 class="project-title" data-i18n="proj_auditor_title">Auditor de Contraseñas</h3>
             <div class="badges"><span class="badge">Hashing</span><span class="badge">k-anonimato</span><span class="badge">Python</span></div>
             <p data-i18n="proj_auditor_desc">Mide la fuerza de una contraseña y revisa si fue filtrada usando k-anonimato: la contraseña nunca sale de tu equipo.</p>
             <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/auditor-contrasenas" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="120" data-tags="data" data-project-id="ventas">
-            <span class="project-num" aria-hidden="true">09</span>
+            <span class="project-num" aria-hidden="true">07</span>
             <h3 class="project-title" data-i18n="proj_ventas_title">Análisis de Ventas</h3>
             <div class="badges"><span class="badge">Pandas</span><span class="badge">Matplotlib</span><span class="badge">Python</span></div>
             <p data-i18n="proj_ventas_desc">Limpieza de datos, gráficos y un reporte automático sobre un año de ventas de una cadena ficticia de tiendas.</p>
             <div class="project-links"><a class="project-arrow" href="https://github.com/FP-507/analisis-ventas" target="_blank" rel="noopener noreferrer" data-i18n="repo_label">Repositorio →</a></div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="apps" data-project-id="racha">
-            <span class="project-num" aria-hidden="true">10</span>
+            <span class="project-num" aria-hidden="true">08</span>
             <h3 class="project-title">Racha · <span data-i18n="proj_racha_title">Hábitos</span></h3>
             <div class="badges"><span class="badge">JavaScript</span><span class="badge">localStorage</span><span class="badge">GitHub Pages</span></div>
             <p data-i18n="proj_racha_desc">App web sin frameworks para registrar hábitos: rachas, mapa de calor de 12 semanas y exportar/importar datos.</p>
@@ -341,7 +366,7 @@
             </div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="120" data-tags="apps" data-project-id="ondas">
-            <span class="project-num" aria-hidden="true">11</span>
+            <span class="project-num" aria-hidden="true">09</span>
             <h3 class="project-title" data-i18n="proj_ondas_title">Mapa de Ondas Interactivo</h3>
             <div class="badges"><span class="badge">JavaScript</span><span class="badge">HTML</span><span class="badge">GitHub Pages</span></div>
             <p data-i18n="proj_ondas_desc">Mapa mental interactivo sobre tecnologías de ondas: cada rama trae un experimento, desde el espectro electromagnético y AM/FM hasta radar, sonar y un medidor de decibeles.</p>
@@ -351,7 +376,7 @@
             </div>
           </article>
           <article class="project-card project" data-animate="fade-up" data-delay="0" data-tags="game" data-project-id="dungeon">
-            <span class="project-num" aria-hidden="true">12</span>
+            <span class="project-num" aria-hidden="true">10</span>
             <h3 class="project-title">Dungeon Fighters</h3>
             <div class="badges"><span class="badge">Pygame</span><span class="badge">Python</span></div>
             <p data-i18n="proj_dungeon_desc">Juego de lucha 2D multijugador local con 5 personajes, escudos con tiempo de recarga, proyectiles con física y selección de escenario en cada ronda.</p>
@@ -365,7 +390,7 @@
     <section id="certs" class="section">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">04</span>
+          <span class="section-num">05</span>
           <h2 data-i18n="certs_heading">Certificaciones</h2>
         </div>
         <div class="cert-grid">
@@ -424,7 +449,7 @@
     <section id="achievements" class="section">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">05</span>
+          <span class="section-num">06</span>
           <h2 data-i18n="achievements_heading">Logros y Experiencia</h2>
         </div>
         <div class="achievements-grid">
@@ -487,58 +512,71 @@
     <section id="roadmap" class="section">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">06</span>
+          <span class="section-num">07</span>
           <h2 data-i18n="roadmap_heading">Ruta de Aprendizaje</h2>
+          <p class="section-lead" data-i18n="roadmap_lead">Cada etapa está respaldada por un proyecto o una certificación.</p>
         </div>
-        <div class="roadmap-track">
+        <div class="roadmap-legend" data-animate="fade-up" aria-hidden="true">
+          <span class="lg lg-done" data-i18n="roadmap_done">Completado</span>
+          <span class="lg lg-active" data-i18n="roadmap_active">En curso</span>
+          <span class="lg lg-upcoming" data-i18n="roadmap_upcoming">Próximo</span>
+        </div>
+        <div class="roadmap-track" style="--progress: 58%">
           <div class="roadmap-line" aria-hidden="true"></div>
           <article class="roadmap-node done" data-animate="fade-up" data-delay="0">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>Fundamentos</h3>
-              <ul class="plain"><li>Sintaxis y tipos</li><li>Estructuras de datos</li><li>Control de flujo</li></ul>
+              <h3 data-i18n="rm1_title">Fundamentos de Python</h3>
+              <ul class="plain"><li data-i18n="rm1_a">Sintaxis y POO</li><li data-i18n="rm1_b">Estructuras de datos</li><li data-i18n="rm1_c">Manejo de errores</li></ul>
+              <span class="node-proof">Cisco PE1 · PE2</span>
             </div>
           </article>
           <article class="roadmap-node done" data-animate="fade-up" data-delay="80">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>Práctica real</h3>
-              <ul class="plain"><li>Funciones y módulos</li><li>Manejo de errores</li><li>Leer documentación</li></ul>
+              <h3 data-i18n="rm2_title">Datos y análisis</h3>
+              <ul class="plain"><li data-i18n="rm2_a">Excel y Power Query</li><li>Power BI · DAX</li><li>Pandas</li></ul>
+              <span class="node-proof">MOS Excel Expert</span>
             </div>
           </article>
           <article class="roadmap-node done" data-animate="fade-up" data-delay="160">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>Interfaces · Flet</h3>
-              <ul class="plain"><li>Componentes UI</li><li>Estado y eventos</li><li>Integración de APIs</li></ul>
+              <h3 data-i18n="rm3_title">Desarrollo web</h3>
+              <ul class="plain"><li>Django</li><li data-i18n="rm3_b">FastAPI y REST</li><li>SQL</li></ul>
+              <span class="node-proof">TradeFlow Colón</span>
             </div>
           </article>
           <article class="roadmap-node active" data-animate="fade-up" data-delay="240">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>Datos & Seguridad</h3>
-              <ul class="plain"><li>CSV · Pandas</li><li data-i18n="roadmap_data_cyber">Ciberseguridad básica</li><li>SQL esencial</li></ul>
+              <h3 data-i18n="rm4_title">Calidad de software</h3>
+              <ul class="plain"><li data-i18n="rm4_a">Tests con pytest</li><li data-i18n="rm4_b">CI con GitHub Actions</li><li data-i18n="rm4_c">Git y revisiones</li></ul>
+              <span class="node-proof" data-i18n="rm4_proof">API de Tareas</span>
             </div>
           </article>
           <article class="roadmap-node active" data-animate="fade-up" data-delay="320">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>Calidad de código</h3>
-              <ul class="plain"><li>Git avanzado</li><li>Tests unitarios</li><li>Refactoring</li></ul>
+              <h3 data-i18n="rm5_title">IA aplicada</h3>
+              <ul class="plain"><li data-i18n="rm5_a">APIs de LLM</li><li data-i18n="rm5_b">RAG y búsqueda</li><li data-i18n="rm5_c">Analítica con IA</li></ul>
+              <span class="node-proof" data-i18n="rm5_proof">Asistente IA</span>
             </div>
           </article>
           <article class="roadmap-node active" data-animate="fade-up" data-delay="400">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>IA aplicada</h3>
-              <ul class="plain"><li>Prompt engineering</li><li>APIs de modelos LLM</li><li>Agentes básicos</li></ul>
+              <h3 data-i18n="rm6_title">Ciberseguridad</h3>
+              <ul class="plain"><li>OWASP Top 10</li><li data-i18n="rm6_b">Hashing y secretos</li><li data-i18n="rm6_c">Auditoría de código</li></ul>
+              <span class="node-proof">Security Guard</span>
             </div>
           </article>
-          <article class="roadmap-node active" data-animate="fade-up" data-delay="480">
+          <article class="roadmap-node upcoming" data-animate="fade-up" data-delay="480">
             <div class="node-dot"></div>
             <div class="node-body">
-              <h3>Producción</h3>
-              <ul class="plain"><li>Deploy en la nube</li><li>CI/CD</li><li>Docker</li></ul>
+              <h3 data-i18n="rm7_title">Producción</h3>
+              <ul class="plain"><li>Docker</li><li data-i18n="rm7_b">Despliegue en la nube</li><li data-i18n="rm7_c">Monitoreo</li></ul>
+              <span class="node-proof" data-i18n="rm7_proof">Siguiente paso</span>
             </div>
           </article>
         </div>
@@ -549,7 +587,7 @@
     <section id="timeline" class="section">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">07</span>
+          <span class="section-num">08</span>
           <h2 data-i18n="timeline_heading">Línea de Tiempo</h2>
         </div>
         <div class="timeline-track">
@@ -559,7 +597,14 @@
             <div class="tl-card">
               <span class="tl-year">2026</span>
               <h3 data-i18n="timeline_2026">Proyectos de mayor escala e impacto</h3>
-              <p data-i18n="timeline_2026_body">TradeFlow Colón para la Expo ¡Supérate!, SignScan y Security Guard. Certificaciones Excel Expert y Python Essentials 1 y 2. Voluntariado con TECHO, Hogar Eco y Fanlyc.</p>
+              <ul class="tl-events">
+                <li><span class="tl-month" data-i18n="m_nov">Nov</span><span data-i18n="tl26_nov">Python Essentials 2 (Cisco) y cinco proyectos nuevos con tests y CI.</span></li>
+                <li><span class="tl-month" data-i18n="m_aug">Ago</span><span data-i18n="tl26_aug">Python Essentials 1 (Cisco).</span></li>
+                <li><span class="tl-month" data-i18n="m_jun">Jun</span><span data-i18n="tl26_jun">Voluntariado con Hogar Eco y Fanlyc.</span></li>
+                <li><span class="tl-month" data-i18n="m_may">May</span><span data-i18n="tl26_may">Certificación Microsoft Excel Expert.</span></li>
+                <li><span class="tl-month" data-i18n="m_apr">Abr</span><span data-i18n="tl26_apr">Construcción de viviendas con TECHO en Buena Vista, Colón.</span></li>
+                <li><span class="tl-month tl-month-star" aria-hidden="true">★</span><span data-i18n="tl26_star">TradeFlow Colón para la Expo ¡Supérate! 2026 y Security Guard.</span></li>
+              </ul>
             </div>
           </div>
           <div class="tl-item" data-animate="fade-up" data-delay="120">
@@ -567,7 +612,12 @@
             <div class="tl-card">
               <span class="tl-year">2025</span>
               <h3 data-i18n="timeline_2025">Practicando y construyendo</h3>
-              <p data-i18n="timeline_2025_body">Certificación Excel Associate y TOEIC B2. Juegos con Pygame, chat en tiempo real, bots y APIs. Prácticas profesionales en World Logistic.</p>
+              <ul class="tl-events">
+                <li><span class="tl-month" data-i18n="m_dec">Dic</span><span data-i18n="tl25_dec">Prácticas profesionales en World Logistic: documentación e inventarios.</span></li>
+                <li><span class="tl-month" data-i18n="m_oct">Oct</span><span data-i18n="tl25_oct">Certificación Microsoft Excel Associate.</span></li>
+                <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl25_a">TOEIC nivel B2 en inglés.</span></li>
+                <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl25_b">Juegos con Pygame, chat en tiempo real, bots y APIs.</span></li>
+              </ul>
             </div>
           </div>
           <div class="tl-item" data-animate="fade-up" data-delay="240">
@@ -575,7 +625,11 @@
             <div class="tl-card">
               <span class="tl-year">2024</span>
               <h3 data-i18n="timeline_2024">Inicio en Python</h3>
-              <p data-i18n="timeline_2024_body">Primer print("Hola, Python"). Ingreso al Programa ¡Supérate! y al Bachiller en Ciencias del Colegio Abel Bravo.</p>
+              <ul class="tl-events">
+                <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl24_a">Primer print("Hola, Python").</span></li>
+                <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl24_b">Ingreso al Programa ¡Supérate! y al Bachiller en Ciencias del Colegio Abel Bravo.</span></li>
+                <li><span class="tl-month tl-month-star" aria-hidden="true">•</span><span data-i18n="tl24_c">Primer TOEIC B2.</span></li>
+              </ul>
             </div>
           </div>
           <div class="tl-item" data-animate="fade-up" data-delay="360">
@@ -583,7 +637,9 @@
             <div class="tl-card">
               <span class="tl-year">2023</span>
               <h3 data-i18n="timeline_2023">Primer premio</h3>
-              <p data-i18n="timeline_2023_body">1.er lugar en la Feria de Ciencias del Colegio Abel Bravo.</p>
+              <ul class="tl-events">
+                <li><span class="tl-month tl-month-star" aria-hidden="true">★</span><span data-i18n="timeline_2023_body">1.er lugar en la Feria de Ciencias del Colegio Abel Bravo.</span></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -594,7 +650,7 @@
     <section id="contact" class="section section-contact">
       <div class="container">
         <div class="section-header" data-animate="fade-up">
-          <span class="section-num">08</span>
+          <span class="section-num">09</span>
           <h2 data-i18n="contact_heading">Contacto</h2>
         </div>
         <div class="contact-body" data-animate="fade-up" data-delay="100">
@@ -619,6 +675,6 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=8" defer></script>
+  <script src="script.js?v=10" defer></script>
 </body>
 </html>
