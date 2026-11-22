@@ -1206,3 +1206,102 @@ body {
   .hero-actions { justify-content: center !important; }
   .hero-social { justify-content: center !important; }
 }
+
+/* ============================================
+   PROJECTS — FEATURED CARD & LINKS
+   ============================================ */
+.project-featured {
+  grid-column: span 2;
+  border-color: rgba(0, 212, 255, 0.22);
+  background:
+    linear-gradient(135deg, rgba(0, 212, 255, 0.07), rgba(168, 85, 247, 0.07)),
+    var(--surface);
+}
+.project-featured::before { transform: scaleX(1); }
+.project-featured .project-num { color: var(--accent); }
+.project-featured .project-title { font-size: 1.5rem; }
+.project-featured p { font-size: 0.92rem; max-width: 72ch; }
+
+.project-links {
+  display: flex; flex-wrap: wrap; gap: var(--sp-sm) var(--sp-lg);
+  align-items: center; margin-top: auto;
+}
+.project-note {
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);
+}
+
+/* ============================================
+   CERTIFICATIONS
+   ============================================ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-md);
+}
+.cert-card {
+  display: flex; align-items: center; gap: var(--sp-lg);
+  background: var(--surface); backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  transition: border-color var(--dur-med), transform var(--dur-med);
+}
+.cert-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+.cert-badge {
+  width: 72px; height: 72px; flex-shrink: 0; object-fit: contain;
+}
+.cert-badge-text {
+  display: grid; place-items: center; border-radius: 50%;
+  border: 2px solid var(--accent); color: var(--accent);
+  font-family: var(--font-mono); font-weight: 700; font-size: 1.2rem;
+  background: rgba(0, 212, 255, 0.06);
+}
+.cert-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.cert-issuer { color: var(--text-soft); font-size: 0.82rem; line-height: 1.4; }
+.cert-date {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);
+  margin-top: var(--sp-xs); letter-spacing: 0.5px;
+}
+
+/* ============================================
+   ACHIEVEMENTS & EXPERIENCE
+   ============================================ */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+}
+.exp-list { display: grid; gap: var(--sp-md); }
+.exp-list li { display: grid; gap: 2px; }
+.exp-list strong { color: var(--text); font-size: 0.92rem; font-weight: 600; }
+.exp-list span { color: var(--text-soft); font-size: 0.82rem; line-height: 1.5; }
+.exp-list .exp-detail { color: var(--text-muted); }
+
+@media (max-width: 960px) {
+  .achievements-grid { grid-template-columns: 1fr; }
+}
+
+/* With 8 sections the nav no longer fits on tablets: use the menu button earlier. */
+@media (max-width: 1100px) {
+  .nav { display: none; }
+  .nav.open {
+    display: flex; position: fixed; inset: 0;
+    background: rgba(8, 9, 13, 0.96); backdrop-filter: blur(24px);
+    z-index: 999; align-items: center; justify-content: center;
+  }
+  .theme-light .nav.open { background: rgba(245, 247, 250, 0.96); }
+  .nav.open .nav-list { flex-direction: column; gap: var(--sp-sm); }
+  .nav.open .nav-link { font-size: 1.15rem; padding: var(--sp-sm) var(--sp-xl); }
+  .menu-toggle { display: flex; z-index: 1001; }
+  .header-actions { margin-left: auto; margin-right: var(--sp-md); }
+  /* backdrop-filter on the scrolled header traps the fixed overlay inside the header box */
+  .header:has(.nav.open) { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+}
+@media (max-width: 768px) {
+  .project-featured { grid-column: span 1; }
+  .project-featured .project-title { font-size: 1.25rem; }
+}
+@media (max-width: 480px) {
+  .cert-grid { grid-template-columns: 1fr; }
+  .cert-card { gap: var(--sp-md); }
+  .cert-badge { width: 56px; height: 56px; }
+}
