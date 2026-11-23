@@ -70,6 +70,7 @@
       hero_available: "Disponible para prácticas y proyectos",
       hero_name: 'Fidel Pizart',
       meta_description: "Fidel Pizart, desarrollador Python en Colón, Panamá. Aplicaciones web, análisis de datos y diseño web, con proyectos publicados y demos en vivo.",
+      meta_title: "Fidel Pizart · Desarrollador Python, Datos y Web",
       hero_role: "Desarrollador Python · Datos · Web",
       hero_desc: "Convierto problemas reales en software que funciona: aplicaciones web, análisis de datos que guían decisiones y sitios con diseño propio. Desde Colón, Panamá.",
       hero_cta_projects: "Ver mi trabajo",
@@ -217,6 +218,7 @@
       hero_available: "Available for internships and projects",
       hero_name: 'Fidel Pizart',
       meta_description: "Fidel Pizart, Python developer in Colón, Panama. Web apps, data analysis and web design, with published projects and live demos.",
+      meta_title: "Fidel Pizart · Python Developer, Data and Web",
       hero_role: "Python Developer · Data · Web",
       hero_desc: "I turn real problems into working software: web apps, data analysis that drives decisions and websites with original design. Based in Colón, Panama.",
       hero_cta_projects: "See my work",
@@ -377,6 +379,7 @@
     root.setAttribute('lang', lang === 'en' ? 'en' : 'es');
     langButtons.forEach(b => b.setAttribute('aria-pressed', b.dataset.setLang === lang ? 'true' : 'false'));
     if (dict.meta_description) document.querySelector('meta[name="description"]')?.setAttribute('content', dict.meta_description);
+    if (dict.meta_title) document.title = dict.meta_title;
     // Re-trigger typing effect
     typeHeroRole(dict.hero_role);
   }
